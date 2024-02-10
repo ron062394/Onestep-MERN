@@ -34,8 +34,27 @@ const getProductById = async (req, res) => {
 };
 
 
+const updateProductById = async (req, res) => {
+    try {
+      const updatedProduct = await Product.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+      );
+      if (!updatedProduct) {
+        return res.status(404).json({ message: 'Product not found' });
+      }
+      res.json(updatedProduct);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+};
+  
+
+
 module.exports = {
     createProduct,
     getAllProducts,
     getProductById,
+    updateProductById,
 };
