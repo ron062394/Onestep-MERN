@@ -17,7 +17,7 @@ app.use((req, res, next)=> {
 })
 
 // Routes
-app.use('/api/products', require('./src/routes/product'));
+app.use('/api/product', require('./src/routes/product'));
 
 
 mongoose
