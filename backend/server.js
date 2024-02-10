@@ -7,6 +7,18 @@ const app = express();
 
 //Middleware
 app.use(express.json());
+app.use((req, res, next)=> {
+  console.log(req.path, req.method);
+  if (req.body) {
+    console.log('Request body:');
+    console.log(req.body);
+  }  
+  next();
+})
+
+// Routes
+app.use('/api/products', require('./src/routes/product'));
+
 
 mongoose
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
