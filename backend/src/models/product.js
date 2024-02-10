@@ -33,6 +33,11 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    promotion: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Promotion',
+        default: null
+    }
 }, { timestamps: true });
 
 const Product = mongoose.model('Product', productSchema);
