@@ -13,6 +13,14 @@ code {
 }
 
 
+.logo {
+  font-size: 24px;
+}
+.yellow-color {
+  color: #FFD702;
+
+}
+
 .primary-btn {
   background-color: #FFD702;
   height: 45px;

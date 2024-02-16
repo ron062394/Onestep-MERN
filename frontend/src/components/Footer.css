@@ -1,1 +1,24 @@
 /* Footer */
+.footer-section{
+    background-color: #204C38;
+    padding: 40px 140px;
+    
+}
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+.quick-links li {
+    color: #FFD702;
+    font-size: .9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy-right {
+    font-size: .8rem;
+}

@@ -1,12 +1,6 @@
 
 /* Header section */
-.logo {
-    font-size: 24px;
-  }
-  .yellow-color {
-    color: #FFD702;
-  
-  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -42,3 +36,4 @@
     padding-left: 1rem;
     font-size: 16px;
   }
+
