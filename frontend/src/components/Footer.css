@@ -1,8 +1,9 @@
 /* Footer */
 .footer-section{
     background-color: #204C38;
-    padding: 40px 140px;
-    
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
 }
 
 .quick-links {
@@ -12,13 +13,16 @@
 .quick-links li {
     color: #FFD702;
     font-size: .9rem;
+    
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    margin: 0 140px;
 }
 
 .copy-right {
     font-size: .8rem;
+    margin: 0 140px;
 }

@@ -33,4 +33,12 @@ code {
   background-color: #204C38;
   color: aliceblue;
   border-radius: 5px;
+  font-size: 1.2rem;
+  display: inline;
+  font-size: 18px;
+  padding: 15px 32px;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+  border: none;
 }

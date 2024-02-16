@@ -1,6 +1,10 @@
 
 .signup-section {
   margin: 40px 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
 }
 
 
@@ -9,20 +13,32 @@
   flex-direction: column;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.75);
+  background-color: rgba(189, 189, 189, 0.25);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  padding: 1rem;
+  padding: 2rem;
+  height: 100%;
 }
 
 .signup-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  
 }
-.signup-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
+
+
+
+.signup-card input{
+  border: 1px solid rgb(212, 212, 212);
+  background: white; 
+  width: 86%;
+  height: 2rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  margin: auto;
 }
-  
+
+.signup-text {
+  margin-bottom: 1rem;
+}
