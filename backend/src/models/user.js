@@ -1,6 +1,4 @@
-const { Timestamp } = require('mongodb');
 const mongoose = require('mongoose');
-
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -16,11 +14,11 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     contactNumber: {
-        type: number,
+        type: Number, // Capitalized "Number"
         required: true,
     },
     birthDay: {
-        type: date,
+        type: Date, // Capitalized "Date"
         required: true,
     },
     country: {
@@ -31,8 +29,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-}, {timestamp: true});
+}, { timestamps: true }); // Correct option for timestamps
 
-const User = mongoose.model('Guest', guestSchema);
+const User = mongoose.model('User', userSchema); // Model name is "User"
 
 module.exports = User;
