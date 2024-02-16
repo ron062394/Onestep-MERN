@@ -117,3 +117,33 @@ header {
   z-index: -1;
 
 }
+
+
+/* Login page */
+.login-section {
+  margin: 40px 140px;
+}
+
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 1rem;
+}
+
+.login-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.secondary-btn {
+  background-color: #204C38;
+  color: aliceblue;
+  border-radius: 5px;
+}
