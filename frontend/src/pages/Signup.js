@@ -1,11 +1,11 @@
+import './Signup.css'
 
-
-function Login() {
+function Signup() {
   return (
-    <div className="login-section">
-        <div className="login-container">
+    <div className="signup-section">
+        <div className="signup-container">
             <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" />
-            <div className="sign-up-container">
+            <div className="signup-card">
                 <span>Sign up an account</span>
                 <input type="text" placeholder="First Name"/>
                 <input type="text" placeholder="Last Name"/>
@@ -19,4 +19,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;

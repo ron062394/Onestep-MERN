@@ -1,3 +1,4 @@
+import './Home.css'
 function Home() {
   return (
     <div className="homepage">
@@ -8,7 +9,7 @@ function Home() {
                     <div className="yellow-color">TRENDSETTING</div>
                 </h1>
                 <p className="hero-subtext">Get ready for innovation and style that sets the pace.</p>
-                <button className="Shop-now-btn">Shop Now</button>
+                <button className="Shop-now-btn primary-btn">Shop Now</button>
             </div>
 
             <div className="img-container">

@@ -1,0 +1,44 @@
+
+/* Header section */
+.logo {
+    font-size: 24px;
+  }
+  .yellow-color {
+    color: #FFD702;
+  
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 140px;
+    align-items: center;
+    padding-top: 1.5%;
+  }
+  
+  .link-list-container {
+    list-style: none;
+    display: flex; 
+  }
+  
+  .link-list-container li {
+    margin-left: 1.5rem; 
+  }
+  
+  
+  .selected::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%; /* Adjust the value to set the starting position of the underline */
+    width: 60%; /* Adjust the value to set the width of the underline */
+    height: 2px; /* Adjust the value to set the thickness of the underline */
+    background-color: blue; /* Adjust the color of the underline */
+  }
+  
+  .search-input {
+    height: 1.5rem;
+    width: 30rem;
+    border-radius: 20px;
+    padding-left: 1rem;
+    font-size: 16px;
+  }
