@@ -12,11 +12,29 @@ function Login() {
     setFormData({...formData, [name]: value});
   }
 
-  const handleLogin = async => {
+  const handleLogin = async() => {
     try {
-        console.log('Login triggered')
+        const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json',
+        },
+        body: JSON.stringify(formData),
+       });
+
+        if (response.status === 200) {
+            const data = await response.json();
+            localStorage.setItem('token', data.token);
+            console.log('Login success');
+        } else if (response.status === 401) {
+            console.error('Login failed. Please check your credentials.')
+        } else {
+            console.error('Login failed');
+        }
+
+
     } catch (error) {
-        
+        console.error('Error:', error)
     }
   }
 
