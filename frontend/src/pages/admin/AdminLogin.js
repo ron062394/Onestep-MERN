@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import './Login.css'
 
-function Login() {
+function AdminLogin() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -41,9 +40,8 @@ function Login() {
   return (
     <div className="login-section">
       <div className="login-container">
-        <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" />
         <div className="login-card">
-          <span className='login-text'>Login</span>
+          <span className='login-text'>Login Portal</span>
 
           <input
             type="email"
@@ -65,4 +63,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AdminLogin;
