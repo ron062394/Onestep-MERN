@@ -1,0 +1,43 @@
+.login-section {
+    margin: 40px 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+  }
+
+
+.login-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter:  saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(189, 189, 189, 0.10);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 2rem;
+    height: 100%;
+}
+
+
+.login-card input{
+    border: 1px solid rgb(212, 212, 212);
+    background: white; 
+    width: 86%;
+    height: 2rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    margin: auto;
+}
+  
+.login-text {
+  margin-bottom: 1rem;
+}
