@@ -51,7 +51,8 @@ const productSchema = new mongoose.Schema({
     },
     promotion: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Promotion'
+        ref: 'Promotion',
+        default: null
     }
 }, { timestamps: true });
 
