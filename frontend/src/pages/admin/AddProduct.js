@@ -5,13 +5,14 @@ function AddProduct() {
     const [formData, setFormData] = useState({
         product: '',
         description: '',
-        price: '',
+        price: 0,
         image: '',
         colors: '',
         category: '',
         size: '',
         collection: '',
-        features: ''
+        features: '',
+        quantity: 0 // Add quantity field
     });
 
     const handleInputChange = (e) => {
@@ -81,6 +82,15 @@ function AddProduct() {
                     />
                 </label>
 
+                <label>
+                    Quantity:
+                    <input
+                        type="number"
+                        name="quantity"
+                        value={formData.quantity}
+                        onChange={handleInputChange}
+                    />
+                </label>
 
                 <label>
                     Category:
