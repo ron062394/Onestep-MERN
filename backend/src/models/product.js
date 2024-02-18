@@ -45,6 +45,10 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    stocks: {
+        type: Number,
+        default: 0
+    },
     promotion: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Promotion'
