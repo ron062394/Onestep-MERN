@@ -13,13 +13,25 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-        image: {
+    image: {
         type: String,
         required: true
     },
-        category: {
+    colors: [{
+        type: String
+    }],
+    category: {
         type: String,
         required: true
+    },
+    size: {
+        type: String
+    },
+    collection: {
+        type: String
+    },
+    features: {
+        type: String
     },
     ratings: {
         type: Number,
@@ -35,8 +47,7 @@ const productSchema = new mongoose.Schema({
     },
     promotion: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Promotion',
-        default: null
+        ref: 'Promotion'
     }
 }, { timestamps: true });
 
