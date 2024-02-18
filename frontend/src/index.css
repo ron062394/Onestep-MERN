@@ -43,3 +43,7 @@ code {
   cursor: pointer;
   border: none;
 }
+
+.admin-container {
+  display: flex;
+}
