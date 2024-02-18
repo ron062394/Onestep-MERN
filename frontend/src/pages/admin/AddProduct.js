@@ -12,7 +12,7 @@ function AddProduct() {
         size: '',
         collection: '',
         features: '',
-        quantity: 0 // Add quantity field
+        quantity: 0
     });
 
     const handleInputChange = (e) => {
@@ -25,7 +25,21 @@ function AddProduct() {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         console.log("submitted", formData);
-        // You can send formData to your server or perform other actions here
+
+        try {
+            const response = await fetch('/api/product/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',    
+                },
+                body: JSON.stringify(formData)
+            });       
+        } catch (error) {
+            console.error(error);            
+        }
+
+
+        
     };
 
     return (

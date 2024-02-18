@@ -1,6 +1,9 @@
 .add-product {
     display: flex;
     flex-direction: column;
+}
+
+.add-product-component {
     background-color: white;
     margin: 1rem;
     padding: 1rem;
