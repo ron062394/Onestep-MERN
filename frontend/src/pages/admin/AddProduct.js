@@ -77,8 +77,10 @@ function AddProduct() {
                         name="colors"
                         value={formData.colors}
                         onChange={handleInputChange}
+                        placeholder="Enter multiple colors separated by commas"
                     />
                 </label>
+
 
                 <label>
                     Category:
