@@ -1,4 +1,8 @@
 .add-product {
     display: flex;
     flex-direction: column;
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
 }
