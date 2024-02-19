@@ -8,16 +8,15 @@ import Sidebar from "./components/admin/AdminSidebar";
 import AdminHeader from "./components/admin/AdminHeader";
 import Dashboard from "./pages/admin/Dashboard";
 import AddProduct from "./pages/admin/AddProduct";
+import ViewProduct from "./pages/ViewProduct";
 
 function App() {
   return (
     <div className="App">
       <div className="dark"></div>
-        <AdminHeader/>
-        <div className="admin-container">
-          <Sidebar/>
-          <Dashboard/>
-        </div>
+        <Header/>
+        <ViewProduct/>
+        <Footer/>
 
     </div>
   );
