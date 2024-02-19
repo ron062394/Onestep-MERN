@@ -8,17 +8,16 @@
 .view-product-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-
-
+    gap: 1rem
 }
 
 .img-container {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     display: grid;
     place-items: center;
+    border-radius: 5px;
 }
 
 .img-container img {
@@ -44,6 +43,7 @@
 .product-info-container {
     background-color: rgb(255, 255, 255);
     padding: 2rem;
+    border-radius: 5px;
 }
 
 .product-info-container div{
@@ -56,4 +56,17 @@
 
 .rate-info span {
     margin-right: 1rem;
+}
+
+
+.spec-container {
+    background-color: hsl(0, 0%, 100%);
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.spec-text-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

@@ -28,12 +28,33 @@ function ViewProduct() {
                     <button>CHECKOUT</button>
                 </div>
             </div>
-            <div>
-
-            </div>
+            
         </div>
 
-      </div>
+        <div className='spec-container'>
+            <div>SPECIFICATIONS</div>
+                <div className='spec-text-container'>
+                    <div>
+                        <div>Brand</div>
+                        <div>Lorem Ipsilum</div>
+                    </div>
+                    <div>
+                        <div>Collection</div>
+                        <div>Lorem Ipsilum</div>
+                    </div>
+                    <div>
+                        <div>Features</div>
+                        <div>Lorem Ipsilum</div>
+                    </div>
+                    <div>
+                        <div>Sizes</div>
+                        <div>Lorem Ipsilum</div>
+                    </div>
+                </div>
+                <div>DESCRIPTION</div>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem blanditiis perspiciatis obcaecati facere veritatis reprehenderit quo officiis deleniti cumque iste, recusandae doloribus. Laborum, sint cum blanditiis quis voluptates eaque repudiandae ut fugiat officia odio accusantium esse optio rerum cupiditate, consequuntur provident eum deleniti adipisci praesentium! Veniam id dignissimos ducimus.</div>
+            </div>
+        </div>
     );
   }
   
