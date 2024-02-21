@@ -70,3 +70,21 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+.btn-container button {
+    margin-right: 1rem;
+}
+
+.spec {
+    margin: 2rem 0;
+}
+
+.spec div:nth-child(1) {
+    color: #A4A4A4;
+    font-size: 16px;
+}
+
+.spec div:nth-child(2) {
+    font-size: 22px;
+}
+

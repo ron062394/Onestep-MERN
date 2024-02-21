@@ -44,6 +44,39 @@ code {
   border: none;
 }
 
+.tertiary-btn {
+  background-color:aliceblue ;
+  color: #204C38;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  display: inline;
+  font-size: 18px;
+  padding: 15px 32px;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+  border: 1px rgb(247, 247, 247) solid;
+}
+
 .admin-container {
   display: flex;
+}
+
+button:hover {
+  background-color: #FFD702;
+  color: rgb(255, 255, 255);
+  box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
+  -webkit-box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
+  -moz-box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
+}
+
+
+/* Typography */
+.shadow {
+  box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
+  -moz-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
+}
+.emphasized {
+  font-weight: 400;
 }
