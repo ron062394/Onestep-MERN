@@ -1,6 +1,23 @@
 import './ViewProduct.css'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 
 function ViewProduct() {
+    const { id } = useParams();
+    const [product, setProduct] = useState(null);
+    console.log(id)
+    useEffect(() => {
+        fetch(`/api/product/${id}`, {
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            setProduct(data)
+        })
+        .catch((error) => console.error(error));
+    }, [id]);
+
+    console.log(product)
+
     return (
       <div className="view-product-component">
         <div className="view-product-container ">
