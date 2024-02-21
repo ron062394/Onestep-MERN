@@ -27,9 +27,9 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    size: {
+    size: [{
         type: String
-    },
+    }],
     collection: {
         type: String
     },
