@@ -5,6 +5,9 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    brand: {  // New field for brand, placed after product
+        type: String
+    },
     description: { 
         type: String,
         required: true
