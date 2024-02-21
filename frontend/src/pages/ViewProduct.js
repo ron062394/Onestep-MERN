@@ -28,6 +28,15 @@ function ViewProduct() {
                         </div>
                         <div className='product-info-container shadow'>
                             <h3>{ product.product }</h3>
+                            <div className=''>
+                                <span>Sizes: </span>
+                                {product.size.map((size, index) => (
+                                <span key={index}>
+                                    {size}
+                                    {index !== product.size.length - 1 && ', '}
+                                </span>
+                                ))}
+                            </div>
                             <div>${ product.price }</div>
                             <div className='rate-info'>
                                 <span>{ product.totalRatings / product.ratings }s</span>
@@ -35,6 +44,8 @@ function ViewProduct() {
                                 <span>Ratings: { product.ratings }</span>
                                 <span>|</span>
                                 <span>Sold: { product.qtySold }</span>
+                                <span>|</span>
+                                <span>Stocks: { product.stocks }</span>
                             </div>
 
                             <div className="img-preview-container">
@@ -53,27 +64,21 @@ function ViewProduct() {
                     <div className='spec-container shadow'>
                         <h3>SPECIFICATIONS</h3>
                         <div className='spec-text-container'>
-                            <div className='spec'>
-                                <div>Brand</div>
+                        <div className='spec'>
+                                <div>Product Name</div>
+                                <div>{ product.product }</div>
+                            </div>                            <div className='spec'>
+                            <div>Brand</div>
                                 <div>{ product.brand }</div>
                             </div>
                             <div className='spec'>
                                 <div>Collection</div>
                                 <div>{ product.collection }</div>
                             </div>
-                            <div className='spec'>
-                                <div>Features</div>
-                                <div>{ product.features }</div>
-                            </div>
-                            <div className='spec'>
-                                <div>Sizes</div>
-                                {product.size.map((size, index) => (
-                                <span key={index}>
-                                    {size}
-                                    {index !== product.size.length - 1 && ', '}
-                                </span>
-                                ))}
-                            </div>
+                        </div>
+                        <div className='spec'>
+                            <div>Features</div>
+                            <div>{ product.features }</div>
                         </div>
                         <hr/>
                         <h3 className='description-title'>DESCRIPTION</h3>

@@ -50,7 +50,8 @@
     margin: 1rem 0;
 }
 
-.product-info-container div:nth-child(2) {
+
+.product-info-container div:nth-child(3) {
     color: #05791F;
 }
 
@@ -85,6 +86,10 @@
 }
 
 .spec div:nth-child(2) {
-    font-size: 22px;
+    font-size: 16px;
 }
 
+
+.product-info-container div:nth-child(2) {
+    font-size: 14px;
+}
