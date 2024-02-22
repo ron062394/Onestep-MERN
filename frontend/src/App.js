@@ -11,6 +11,7 @@ import AdminHeader from "./components/admin/AdminHeader";
 import Dashboard from "./pages/admin/Dashboard";
 import AddProduct from "./pages/admin/AddProduct";
 import ViewProduct from "./pages/ViewProduct";
+import ProductList from './components/ProductList';
 
 function App() {
   return (
@@ -18,10 +19,11 @@ function App() {
       <div className="dark"></div>
         <Router>
           <Header/>
+          <ProductList/>
           <Routes>
-            <Route path='/product/:id' element={<ViewProduct/>}/>    
+            {/* <Route path='/product/:id' element={<ViewProduct/>}/>    
             <Route path='/' element={<Home/>}/>    
-            
+             */}
           </Routes>    
           <Footer/>
         </Router>
