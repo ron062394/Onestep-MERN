@@ -41,11 +41,11 @@ code {
   width: fit-content;
   margin: auto;
   cursor: pointer;
-  border: none;
+  border: 1px #CBCBCB solid;
 }
 
 .tertiary-btn {
-  background-color:aliceblue ;
+  background-color: white ;
   color: #204C38;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -55,7 +55,7 @@ code {
   width: fit-content;
   margin: auto;
   cursor: pointer;
-  border: 1px rgb(247, 247, 247) solid;
+  border: 1px #CBCBCB solid;
 }
 
 .admin-container {
@@ -78,5 +78,5 @@ button:hover {
   -moz-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
 }
 .emphasized {
-  font-weight: 400;
+  font-weight: bold;
 }

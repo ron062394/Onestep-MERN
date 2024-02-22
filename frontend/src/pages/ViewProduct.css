@@ -77,19 +77,25 @@
 }
 
 .spec {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
 }
 
 .spec div:nth-child(1) {
     color: #A4A4A4;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .spec div:nth-child(2) {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 
 .product-info-container div:nth-child(2) {
     font-size: 14px;
+}
+
+.purchase-qty {
+    height:2.5rem;
+    margin-right: 2rem;
+    font-size: 1.5rem;
 }

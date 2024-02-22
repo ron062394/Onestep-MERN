@@ -20,6 +20,8 @@ function App() {
           <Header/>
           <Routes>
             <Route path='/product/:id' element={<ViewProduct/>}/>    
+            <Route path='/' element={<Home/>}/>    
+            
           </Routes>    
           <Footer/>
         </Router>

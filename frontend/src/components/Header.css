@@ -19,6 +19,10 @@
     margin-left: 1.5rem; 
   }
   
+  .link-list-container li:hover {
+    color: #FFD702; 
+    text-decoration: underline;
+  }
   
 
   

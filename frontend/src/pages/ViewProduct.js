@@ -37,7 +37,7 @@ function ViewProduct() {
                                 </span>
                                 ))}
                             </div>
-                            <div>${ product.price }</div>
+                            <div className='emphasized'>${ product.price }</div>
                             <div className='rate-info'>
                                 <span>{ product.totalRatings / product.ratings }s</span>
                                 <span>|</span>
@@ -54,6 +54,7 @@ function ViewProduct() {
                                 <img className="img-preview" src="https://clipart-library.com/image_gallery2/Running-Shoes-Transparent.png" alt="" />
                             </div>
                             <div className='btn-container'>
+                                <input className="purchase-qty" type="text" value={1} />
                                 <button className='tertiary-btn shadow'>ADD TO CART</button>
                                 <button className='secondary-btn shadow'>CHECKOUT</button>
                             </div>
