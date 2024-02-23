@@ -6,9 +6,18 @@
     justify-content: space-between;
 }
 
+.product-img-container {
+    display: grid;
+    place-items: center;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
 .product-card-img {
     width: 100%;
     object-fit: cover;
+
 }
 
 .new {
