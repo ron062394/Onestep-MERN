@@ -36,11 +36,17 @@
     color: #dfdfdf;
     border: none;
     height:3rem;
-    font-size: 1.5rem;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .product-card-content {
     padding: 1rem;
+    border-top: 1px solid rgb(218, 216, 216); /* border on top */
+    border-left: 1px solid rgb(218, 216, 216); /* border on left */
+    border-right: 1px solid rgb(218, 216, 216); /* border on right */
+    height: 100%;
 }
 
 .product-card {
@@ -51,5 +57,15 @@
     height: 400px;
     width: 275px;
     background-color: white;
-    border-radius: 5px;  
+    border-radius: 10px;  
+
+      
+}
+
+.product-card-price {
+    color: #05791F;
+}
+
+.product-card-description {
+    font-size: 14px;
 }
