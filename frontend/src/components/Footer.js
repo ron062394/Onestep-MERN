@@ -1,6 +1,8 @@
 import "./Footer.css"
 
 function Footer() {
+
+
     return (
       <footer className="footer-section">
         <div className="footer-container">

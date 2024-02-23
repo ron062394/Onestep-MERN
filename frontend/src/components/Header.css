@@ -22,6 +22,7 @@
   .link-list-container li:hover {
     color: #FFD702; 
     text-decoration: underline;
+    cursor: pointer;
   }
   
 
