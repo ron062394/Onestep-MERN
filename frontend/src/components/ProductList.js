@@ -23,7 +23,7 @@ function ProductList() {
               <div className='product-card-content'>
                 <div className='product-uppertext'>
                   <span className='new'>NEW</span>
-                  <span className='product-rate'><img className='product-star' src="https://i.imgur.com/XsLLxLD.png" alt="" />{(product.totalRatings / product.ratings).toFixed(2)}<span>({product.ratings})</span></span>
+                  <span className='product-rate'><img className='product-star' src="https://i.imgur.com/XsLLxLD.png" alt="rate-star" />{(product.totalRatings / product.ratings).toFixed(2)}<span>({product.ratings})</span></span>
                 </div>
                 <div className='product-img-container'>
                   <img className="product-card-img" src={product.image} alt="" />

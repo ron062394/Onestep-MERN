@@ -1,27 +1,26 @@
 .view-product-component {
     background-color: #f3f3f3;
     color: black;
-    padding: 40px 140px;
 }
-
 
 .view-product-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem
+    gap: 1rem;
+    padding: 40px 140px;
 }
 
 .img-container {
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 50vh;
+    height: auto;
     display: grid;
     place-items: center;
     border-radius: 5px;
 }
 
 .img-container img {
-    width: 100%;
+    width: 90%;
 }
 
 
@@ -44,6 +43,7 @@
     background-color: rgb(255, 255, 255);
     padding: 2rem;
     border-radius: 5px;
+    
 }
 
 .product-info-container div{
@@ -65,6 +65,7 @@
     margin-top: 1rem;
     padding: 2rem;
     border-radius: 5px;
+    margin: 40px 140px;
 }
 
 .spec-text-container {
@@ -98,4 +99,9 @@
     height:2.5rem;
     margin-right: 2rem;
     font-size: 1.5rem;
+}
+
+.other-section {
+    display: grid;
+    place-items: center;
 }

@@ -1,8 +1,9 @@
-import './ViewProduct.css'
+import './ProductView.css'
+import ProductList from '../components/ProductList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
-function ViewProduct() {
+function ProductView() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     console.log(id)
@@ -21,10 +22,10 @@ function ViewProduct() {
     return (
         <div className="view-product-component">
             {product ? (
-                <div>
+                <div className='view-product'>
                     <div className="view-product-container ">
                         <div className='img-container shadow'>
-                            <img src="https://clipart-library.com/image_gallery2/Running-Shoes-Transparent.png" alt="" />
+                            <img src={product.image} alt="" />
                         </div>
                         <div className='product-info-container shadow'>
                             <h3>{ product.product }</h3>
@@ -39,7 +40,7 @@ function ViewProduct() {
                             </div>
                             <div className='emphasized'>${ product.price }</div>
                             <div className='rate-info'>
-                                <span>{ product.totalRatings / product.ratings }s</span>
+                                <span><img className='product-star' src="https://i.imgur.com/XsLLxLD.png" alt="rate-star" />{(product.totalRatings / product.ratings).toFixed(2)}</span>
                                 <span>|</span>
                                 <span>Ratings: { product.ratings }</span>
                                 <span>|</span>
@@ -49,9 +50,9 @@ function ViewProduct() {
                             </div>
 
                             <div className="img-preview-container">
-                                <img className="img-preview" src="https://clipart-library.com/image_gallery2/Running-Shoes-Transparent.png" alt="" />
-                                <img className="img-preview" src="https://clipart-library.com/image_gallery2/Running-Shoes-Transparent.png" alt="" />
-                                <img className="img-preview" src="https://clipart-library.com/image_gallery2/Running-Shoes-Transparent.png" alt="" />
+                                <img className="img-preview" src={product.image} alt="" />
+                                <img className="img-preview" src={product.image} alt="" />
+                                <img className="img-preview" src={product.image} alt="" />
                             </div>
                             <div className='btn-container'>
                                 <input className="purchase-qty" type="text" value={1} />
@@ -83,8 +84,13 @@ function ViewProduct() {
                         </div>
                         <hr/>
                         <h3 className='description-title'>DESCRIPTION</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem blanditiis perspiciatis obcaecati facere veritatis reprehenderit quo officiis deleniti cumque iste, recusandae doloribus. Laborum, sint cum blanditiis quis voluptates eaque repudiandae ut fugiat officia odio accusantium esse optio rerum cupiditate, consequuntur provident eum deleniti adipisci praesentium! Veniam id dignissimos ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil asperiores perferendis ipsum dolorum dolores cumque unde, iusto eum. Ad ullam consectetur ducimus adipisci aperiam eligendi odit odio eius perferendis. Dignissimos corrupti beatae a? Rem itaque dolorem quod repudiandae quos a, ipsam iste numquam totam dignissimos sapiente illo ducimus, in voluptas. Aut animi sint aperiam dolore delectus debitis asperiores laboriosam praesentium porro tenetur. Eaque, dolore. Minus, consectetur? Provident libero possimus nisi. Aperiam totam labore quisquam asperiores. Ullam voluptatem iusto enim dignissimos sequi veniam exercitationem ex, officiis dicta minima, dolore nostrum maxime libero nisi porro quod velit! Consectetur odit nostrum corrupti quidem facilis illum distinctio non quas dicta quibusdam provident nisi natus est impedit vero architecto sapiente aut harum, minima nulla tempore inventore optio in. Nihil inventore laudantium, assumenda magni porro error. Delectus mollitia nam molestias totam cum corporis eligendi. Ex impedit deserunt pariatur tempora dolor facere repudiandae, non eaque laudantium optio.</p>
+                        <p>{product.description}</p>
                     </div>
+                    <div className='other-section'>
+                        <h3>You might also like</h3>
+                        <ProductList/>
+                    </div>
+
                 </div>
             ) : (
                 <p>Loading...</p>
@@ -95,4 +101,4 @@ function ViewProduct() {
     );
 }
   
-export default ViewProduct;
+export default ProductView;

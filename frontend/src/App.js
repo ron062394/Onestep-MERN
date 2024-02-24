@@ -10,7 +10,7 @@ import Sidebar from "./components/admin/AdminSidebar";
 import AdminHeader from "./components/admin/AdminHeader";
 import Dashboard from "./pages/admin/Dashboard";
 import AddProduct from "./pages/admin/AddProduct";
-import ViewProduct from "./pages/ViewProduct";
+import ProductView from "./pages/ProductView";
 import ProductList from './components/ProductList';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Router>
           <Header/>
           <Routes>
-            <Route path='/product/:id' element={<ViewProduct/>}/>    
+            <Route path='/product/:id' element={<ProductView/>}/>    
             <Route path='/' element={<Home/>}/>    
           </Routes>    
           <Footer/>
