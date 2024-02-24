@@ -1,5 +1,7 @@
 import "./ProductView.css";
 import ProductList from "../components/ProductList";
+
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -53,18 +55,37 @@ function ProductView() {
               </div>
 
               <div className="img-preview-container">
-                <img className="img-preview" src={product.image} alt="" />
-                <img className="img-preview" src={product.image} alt="" />
-                <img className="img-preview" src={product.image} alt="" />
+                <div className="img-selected">
+                  <img className="img-preview" src={product.image} alt="" />
+                </div>
+                <div>
+                  <img className="img-preview" src={product.image} alt="" />
+                </div>
+                <div>
+                  <img className="img-preview" src={product.image} alt="" />
+                </div>
               </div>
               <div className="btn-container">
-                <input
-                  type="text"
+                <input type="text" />
 
-                />
-
-                <button className="tertiary-btn shadow">ADD TO CART</button>
-                <button className="secondary-btn shadow">CHECKOUT</button>
+                <button className="tertiary-btn shadow">
+                  {" "}
+                  <Link
+                    to={`/product/${product._id}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    ADD TO CART
+                  </Link>
+                </button>
+                <button className="secondary-btn shadow">
+                  {" "}
+                  <Link
+                    to={`/product/${product._id}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    CHECK OUT
+                  </Link>
+                </button>
               </div>
             </div>
           </div>

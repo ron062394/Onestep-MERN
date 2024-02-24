@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 40px 140px;
+    padding: 10px 140px;
 }
 
 .img-container {
@@ -32,12 +32,19 @@
     padding: 1rem;
 }
 
+.img-preview-container div {
+    background-color: #ffffff;
+    padding: 1rem;
+}
 
 .img-preview {
     width: 100%;
-    background-color: #ffffff;
+
 }
 
+.img-selected {
+    border: 1px solid #940000;
+}
 
 .product-info-container {
     background-color: rgb(255, 255, 255);
@@ -65,7 +72,7 @@
     margin-top: 1rem;
     padding: 2rem;
     border-radius: 5px;
-    margin: 40px 140px;
+    margin: 10px 140px;
 }
 
 .spec-text-container {
@@ -105,3 +112,4 @@
     display: grid;
     place-items: center;
 }
+
