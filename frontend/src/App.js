@@ -6,12 +6,8 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import AdminLogin from "./pages/admin/AdminLogin";
-import Sidebar from "./components/admin/AdminSidebar";
 import AdminHeader from "./components/admin/AdminHeader";
-import Dashboard from "./pages/admin/Dashboard";
-import AddProduct from "./pages/admin/AddProduct";
-import ProductView from "./pages/ProductView";
-import ProductList from './components/ProductList';
+import ProductView from './pages/ProductView';
 
 function App() {
   return (
@@ -20,9 +16,11 @@ function App() {
         <Router>
           <Header/>
           <Routes>
+          <Route path='/' element={<Home/>}/>    
             <Route path='/product/:id' element={<ProductView/>}/>    
-            <Route path='/' element={<Home/>}/>    
-          </Routes>    
+            <Route path='/register' element={<Signup/>}/>    
+            <Route path='/login' element={<Login/>}/>    
+          </Routes>
           <Footer/>
         </Router>
     </div>

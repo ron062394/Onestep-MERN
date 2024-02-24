@@ -12,7 +12,6 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-/*  */
 .login-card {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
 import './Header.css'
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -7,11 +8,17 @@ function Header() {
         <input className="search-input" type="text" placeholder="Search"/>
         <nav>
             <ul className="link-list-container">
-                <li className="selected"> Home</li>
+                <li className="selected">
+                  <Link className='no-text-decoration' to="/">Home</Link>
+                </li>
                 <li>About us</li>
-                <li>Login</li>
+                <li>
+                  <Link className='no-text-decoration' to="/login">Login</Link>
+                </li>
                 <li>|</li>
-                <li>Signup</li>
+                <li>
+                  <Link className='no-text-decoration' to="/register">Signup</Link>
+                </li>
             </ul>
         </nav>
       </header>

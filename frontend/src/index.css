@@ -81,3 +81,8 @@ button:hover {
 .emphasized {
   font-weight: bold;
 }
+
+.no-text-decoration {
+  text-decoration: none;
+  color: inherit;
+}
