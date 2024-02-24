@@ -19,11 +19,9 @@ function App() {
       <div className="dark"></div>
         <Router>
           <Header/>
-          <ProductList/>
           <Routes>
-            {/* <Route path='/product/:id' element={<ViewProduct/>}/>    
+            <Route path='/product/:id' element={<ViewProduct/>}/>    
             <Route path='/' element={<Home/>}/>    
-             */}
           </Routes>    
           <Footer/>
         </Router>

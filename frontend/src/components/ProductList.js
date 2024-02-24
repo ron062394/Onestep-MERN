@@ -30,8 +30,8 @@ function ProductList() {
                 </div>
     
                 <div className='product-card-price emphasized'>${product.price}</div>
-                <div className='product-card-title emphasized'>{product.product}</div>
-                <div className='product-card-description limited-height'>{product.description}</div>
+                <div className='product-card-title emphasized limited-height1'>{product.product}</div>
+                <div className='product-card-description limited-height2'>{product.description}</div>
               </div>
               <button className='cart-btn'>ADD TO CART</button>
             </div>
