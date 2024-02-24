@@ -1,36 +1,14 @@
-import { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './Signup.css'
+import './Signup.css';
+import { useSignup } from '../hooks/useSignup';
 
 function Signup() {
-  const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
-    contactNumber: '',
-    password: '',
-    birthDay: '',
-    country: ''
-  })
-
-  const handleInputChange = (e) => {
-    const {name, value} = e.target;
-    setFormData({...formData, [name]: value});
-  }
-
+  const { signup, handleInputChange, isLoading, error } = useSignup(); // Using the custom hook
+  
   const handleSignup = async () => {
-    try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+    await signup();
+  };
 
   return (
     <div className="signup-section">
@@ -80,7 +58,10 @@ function Signup() {
             placeholder="Password"
             onChange={handleInputChange}
           />
-          <button className="signup-btn secondary-btn" onClick={handleSignup}>Complete Sign-up</button>
+          <button className="signup-btn secondary-btn" onClick={handleSignup} disabled={isLoading}>
+            {isLoading ? 'Signing Up...' : 'Complete Sign-up'}
+          </button>
+          {error && <p className="error-message">{error}</p>}
         </div> 
       </div>
     </div>

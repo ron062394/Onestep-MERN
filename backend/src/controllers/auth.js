@@ -1,16 +1,24 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../models/user');
-require('dotenv').config();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const User = require("../models/user");
+require("dotenv").config();
 
 const registerUser = async (req, res) => {
-  const { firstName, lastName, email, contactNumber, birthDay, country, password } = req.body;
+  const {
+    firstName,
+    lastName,
+    email,
+    contactNumber,
+    birthDay,
+    country,
+    password,
+  } = req.body;
 
   try {
     // Check if email is already registered
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: 'Email already registered' });
+      return res.status(400).json({ message: "Email already registered" });
     }
 
     // Hash the password
@@ -24,18 +32,20 @@ const registerUser = async (req, res) => {
       contactNumber,
       birthDay,
       country,
-      password: hashedPassword
+      password: hashedPassword,
     });
 
     await newUser.save();
 
-    res.status(201).json({ message: 'User registered successfully' });
+    // Generate JWT token
+    const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET);
+
+    res.status(201).json({firstName, token });
   } catch (error) {
-    res.status(500).json({error });
-    console.log(error)
+    res.status(500).json({ error });
+    console.log(error);
   }
 };
-
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -44,25 +54,24 @@ const loginUser = async (req, res) => {
     // Check if user exists
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: "User not found" });
     }
 
     // Compare passwords
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ message: "Invalid credentials" });
     }
 
     // Generate JWT token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
-    res.json({ token });
+    res.json({ firstName, token });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error});
+    res.status(500).json({ error });
   }
 };
-
 
 const getUserInfo = async (req, res) => {
   const userId = req.user.userId; // Extract user ID from token payload
@@ -71,7 +80,7 @@ const getUserInfo = async (req, res) => {
     // Fetch user information from the database
     const user = await User.findById(userId);
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: "User not found" });
     }
 
     res.json({ user });
@@ -81,9 +90,8 @@ const getUserInfo = async (req, res) => {
   }
 };
 
-
 module.exports = {
   registerUser,
   loginUser,
-  getUserInfo
+  getUserInfo,
 };
