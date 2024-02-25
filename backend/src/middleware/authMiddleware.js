@@ -1,17 +1,18 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const User = require('../models/user');
 
-const authMiddleware = (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
   const token = req.header('Authorization');
 
   if (!token) {
-    return res.status(401).json({ message: 'Access denied' });
+    return res.status(401).json({ message: 'Authentication failed: No token provided' });
   }
 
   try {
     const decoded = jwt.verify(token.substring(7), process.env.JWT_SECRET);
-    console.log(token.substring(7))
-    req.user = { userId: decoded.userId };
+    const user = await User.findOne({ _id: decoded.userId });
+    req.user = user;
     next();
   } catch (error) {
     console.log(token.substring(7))
