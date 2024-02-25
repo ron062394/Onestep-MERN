@@ -66,12 +66,14 @@ const loginUser = async (req, res) => {
     // Generate JWT token
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
 
-    res.json({ firstName, token });
+    // Send the user's first name along with the token in the response
+    res.json({ firstName: user.firstName, token });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error });
   }
 };
+
 
 const getUserInfo = async (req, res) => {
   const userId = req.user.userId; // Extract user ID from token payload
