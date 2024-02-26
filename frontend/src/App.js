@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminHeader from "./components/admin/AdminHeader";
 import ProductView from './pages/ProductView';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/product/:id' element={<ProductView/>}/>    
             <Route path='/register' element={<Signup/>}/>    
             <Route path='/login' element={<Login/>}/>    
+            <Route path='/cart' element={<Cart/>}/>    
           </Routes>
           <Footer/>
         </Router>
