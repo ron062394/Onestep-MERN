@@ -1,53 +1,45 @@
-/* Homepage Design */
+.hero-section {
+  margin: 40px 140px;
+}
 
-.homepage {
-    margin: 40px 140px;
-  }
-  
-  .hero-section {
-    display: flex;
-  }
-  
-  .img-container {
-    width: 50%;
-  }
-  
-  .hero-image {
-    height: 610px;
-  }
-  
-  .shoe-icon {
-    height: 1.125rem;
-    width: 1.125rem;
-  }
-  
-  .hero-text {
-    font-size: 40px;
-  }
+.hero-section-container {
+  display: flex;
+}
 
-  
+.hero-img-container {
+  width: 50%;
+}
+
+.hero-image {
+  height: 610px;
+}
+
+.shoe-icon {
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
+.hero-text {
+  font-size: 40px;
+}
 
 .hero-text-container-2 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 25%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  .hero-text-2 {
-    font-size: 24px;
-  }
-  
-  
-  .dark {
-    width: 100%;
-    height: 200px; /* Adjust the height as needed */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    position: fixed;
-    z-index: -1;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text-2 {
+  font-size: 24px;
+}
+
+.dark {
+  width: 100%;
+  height: 200px; /* Adjust the height as needed */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: fixed;
+  z-index: -1;
+}

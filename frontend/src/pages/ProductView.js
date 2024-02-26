@@ -56,13 +56,13 @@ function ProductView() {
 
               <div className="img-preview-container">
                 <div className="img-selected">
-                  <img className="img-preview" src={product.image} alt="" />
+                  <img className="img-preview" src={product.image} alt="img-preview" />
                 </div>
                 <div>
-                  <img className="img-preview" src={product.image} alt="" />
+                  <img className="img-preview" src={product.image} alt="img-preview" />
                 </div>
                 <div>
-                  <img className="img-preview" src={product.image} alt="" />
+                  <img className="img-preview" src={product.image} alt="img-preview" />
                 </div>
               </div>
               <div className="btn-container">

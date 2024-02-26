@@ -1,42 +1,27 @@
+import { useLogin } from '../hooks/useLogin';
 import { useState } from 'react';
-import './Login.css'
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { login, error, isLoading } = useLogin();
+  const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    const {name, value} = e.target;
-    setFormData({...formData, [name]: value});
-  }
-
-  const handleLogin = async() => {
+  const handleLogin = async () => {
     try {
-        const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type' : 'application/json',
-        },
-        body: JSON.stringify(formData),
-       });
-
-        if (response.status === 200) {
-            const data = await response.json();
-            localStorage.setItem('token', data.token);
-            console.log('Login success');
-        } else if (response.status === 401) {
-            console.error('Login failed. Please check your credentials.')
-        } else {
-            console.error('Login failed');
-        }
-
-
+      await login(email, password);
+      // Check if user is not empty and navigate to home if not empty
+      if (localStorage.getItem('user')) {
+        navigate('/');
+      }
     } catch (error) {
-        console.error('Error:', error)
+      console.error('Login failed:', error);
+      setEmail('');
+      setPassword('');
     }
-  }
+  };
 
   return (
     <div className="login-section">
@@ -49,16 +34,18 @@ function Login() {
             type="email"
             name="email"
             placeholder="Email"
-            onChange={handleInputChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <input
             type="password"
             name="password"
             placeholder="Password"
-            onChange={handleInputChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="login-btn secondary-btn" onClick={handleLogin}>Login</button>
+          <button disabled={isLoading} className="login-btn secondary-btn" onClick={handleLogin}>Login</button>
         </div> 
       </div>
     </div>

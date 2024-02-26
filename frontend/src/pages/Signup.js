@@ -4,7 +4,7 @@ import './Signup.css';
 import { useSignup } from '../hooks/useSignup';
 
 function Signup() {
-  const { signup, handleInputChange, isLoading, error } = useSignup(); // Using the custom hook
+  const { signup, handleInputChange, isLoading, error } = useSignup(); 
   
   const handleSignup = async () => {
     await signup();
