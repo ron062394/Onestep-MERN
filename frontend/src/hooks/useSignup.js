@@ -3,7 +3,7 @@ import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
     const [error, setError] = useState(null);
-    const [isLoading, setIsLoading] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const { dispatch } = useAuthContext();
     const [formData, setFormData] = useState({
         email: '',
