@@ -4,10 +4,14 @@ import ProductList from "../components/ProductList";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useAuthContext } from '../hooks/useAuthContext';
+
 
 function ProductView() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const {user} = useAuthContext();
+
   useEffect(() => {
     fetch(`/api/product/${id}`, {})
       .then((response) => response.json())
@@ -16,6 +20,34 @@ function ProductView() {
       })
       .catch((error) => console.error(error));
   }, [id]);
+
+  const handleAddToCart = async() => {
+    const cartData = {
+        "user": "65d9afcceb55e8617b7c8b5d", 
+        "products": [
+            {
+                "product": id,
+                "quantity": 2
+            }
+        ]
+    };
+
+    const response = await fetch('/api/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${user.token}`,
+      },
+      body: JSON.stringify(cartData),
+    });
+
+    if (response.ok) {
+      console.log('success')
+    }
+
+  }
+
+
 
   return (
     <div className="view-product-component">
@@ -68,19 +100,13 @@ function ProductView() {
               <div className="btn-container">
                 <input type="text" />
 
-                <button className="tertiary-btn shadow">
-                  {" "}
-                  <Link
-                    to={`/product/${product._id}`}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
+                <button className="tertiary-btn shadow" onClick={handleAddToCart}>
                     ADD TO CART
-                  </Link>
                 </button>
                 <button className="secondary-btn shadow">
                   {" "}
                   <Link
-                    to={`/product/${product._id}`}
+                    to={`/cart/${product._id}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     CHECK OUT

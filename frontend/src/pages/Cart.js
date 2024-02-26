@@ -1,7 +1,10 @@
 import ProductList from "../components/ProductList";
 import './Cart.css'
 
+
 function Cart() {
+
+
   return (
     <div className="cart-section">
         <div className="cart-section-container">
@@ -17,7 +20,6 @@ function Cart() {
                     <span>Quantity</span>
                     <span>Remove</span>
                     <span>Price</span>
-            
                 </div>
 
 
