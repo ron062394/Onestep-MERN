@@ -1,7 +1,7 @@
 import "./ProductView.css";
 import ProductList from "../components/ProductList";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -13,6 +13,7 @@ function ProductView() {
   const [product, setProduct] = useState(null);
   const {user} = useAuthContext();
   const [quantity, setQuantity] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`/api/product/${id}`, {})
@@ -44,6 +45,8 @@ function ProductView() {
 
     if (response.ok) {
       console.log('success')
+      navigate('/cart');
+
     }
 
   }
