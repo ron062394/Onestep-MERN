@@ -7,10 +7,12 @@ import { useParams } from "react-router-dom";
 import { useAuthContext } from '../hooks/useAuthContext';
 
 
+
 function ProductView() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const {user} = useAuthContext();
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     fetch(`/api/product/${id}`, {})
@@ -23,11 +25,10 @@ function ProductView() {
 
   const handleAddToCart = async() => {
     const cartData = {
-        "user": "65d9afcceb55e8617b7c8b5d", 
         "products": [
             {
                 "product": id,
-                "quantity": 2
+                "quantity": quantity
             }
         ]
     };
@@ -98,7 +99,15 @@ function ProductView() {
                 </div>
               </div>
               <div className="btn-container">
-                <input type="text" />
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  max={product.stocks} 
+                />
 
                 <button className="tertiary-btn shadow" onClick={handleAddToCart}>
                     ADD TO CART

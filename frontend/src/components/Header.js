@@ -13,9 +13,11 @@ function Header() {
   return (
     <header className="header-section">
       <span className="logo">
-        <span className="yellow-color">O</span>NES
-        <span className="yellow-color">T</span>E
-        <span className="yellow-color">P</span>
+        <Link className="no-text-decoration" to="/">
+          <span className="yellow-color">O</span>NES
+          <span className="yellow-color">T</span>E
+          <span className="yellow-color">P</span>
+        </Link>
       </span>
       <input className="search-input" type="text" placeholder="Search" />
       <nav>
