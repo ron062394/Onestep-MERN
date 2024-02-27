@@ -1,10 +1,42 @@
 import ProductList from "../components/ProductList";
+import { useState, useEffect } from "react";
+import { useAuthContext } from '../hooks/useAuthContext';
 import './Cart.css'
 
 
 function Cart() {
+    const [cart, setCart] = useState([]);
+    const {user} = useAuthContext()
 
+    useEffect(() => {
+        const fetchCartData = async () => {
+            try {
+                if (!user || !user.token) {
+                    console.error('User or token is null');
+                    return;
+                }
 
+                const response = await fetch('/api/cart', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${user.token}`,
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch cart data');
+                }
+                const cartData = await response.json();
+                setCart(cartData);
+                console.log(cart)
+            } catch (error) {
+                console.error('Error fetching cart data:', error);
+            }
+        };
+
+        fetchCartData();
+    }, [user]);
+    
   return (
     <div className="cart-section">
         <div className="cart-section-container">
