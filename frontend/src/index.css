@@ -1,3 +1,4 @@
+
 body {
   background-color: #22002E;
   color: aliceblue;
@@ -28,6 +29,12 @@ code {
   width: 150px;
   border-radius: 5px;
   font-size: 18px;
+}
+
+
+.primary-btn:hover {
+  background-color: #204C38;
+  color: aliceblue;
 }
 
 .secondary-btn {

@@ -46,14 +46,14 @@ function ProductList() {
                 {product.description}
               </div>
             </div>
-            <div className="cart-btn">
+            <button className="cart-btn">
               <Link
                 to={`/product/${product._id}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 ADD TO CART
               </Link>
-            </div>
+            </button>
           </div>
         ))}
       </div>

@@ -29,9 +29,16 @@ function Header() {
           </li>
           <li>About us</li>
           {user ? (
+            <>
             <li>
-              {user.firstName}|<button onClick={handleLogout}>Logout</button>
+              <span>{user.firstName}</span>
             </li>
+              <span className="vertical-line">|</span>
+            <li>
+              <span onClick={handleLogout}>Logout</span>
+            </li> 
+            </>
+
           ) : (
             <>
               <li>
