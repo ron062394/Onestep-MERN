@@ -31,7 +31,7 @@ function Header() {
           {user ? (
             <>
             <li>
-              <span>{user.firstName}</span>
+              <span>Hi {user.firstName},</span>
             </li>
               <span className="vertical-line">|</span>
             <li>
