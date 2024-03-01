@@ -33,7 +33,7 @@ function Home() {
           <div className="hero-text-container-2">
             <div className="hero-text-2">Step into style at</div>
             <div className="hero-text-2">
-              your <span className="yellow-color">One Step Shop</span>
+              your <span className="yellow-color one-step-shop">One Step Shop</span>
             </div>
             <p className="hero-subtext-2">
               Your go-to destination for all your needs, where every step
@@ -41,13 +41,23 @@ function Home() {
             </p>
           </div>
         </div>
-        <div>
-          <img
-            className="shoe-icon"
-            src="https://i.imgur.com/d7T9Bd4.png"
-            alt="shoe-icon"
-          />
-          <span> Over 5000 shoes sold worldwide</span>
+        <div className="hero-section-footer"> 
+          <span>
+            <img
+              className="shoe-icon"
+              src="https://i.imgur.com/d7T9Bd4.png"
+              alt="shoe-icon"
+            />
+            <span> Over 5000 shoes sold worldwide</span>
+          </span>
+
+
+          <span className="icon-container">
+            <img src="https://i.imgur.com/c00oQA1.png" alt="youtube-icon" />
+            <img src="https://i.imgur.com/ZKAHPs7.png" alt="x-icon" />
+            <img src="https://i.imgur.com/XMYunWm.png" alt="facebook-icon" />
+            <img src="https://i.imgur.com/81SdpZo.png" alt="instragram-icon" />
+          </span>
         </div>
       </div>
       {/* 
