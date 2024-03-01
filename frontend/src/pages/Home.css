@@ -41,7 +41,6 @@
   font-size: 2rem;
 }
 
-
 .hero-section-footer {
   display: flex;
   justify-content: space-between;
@@ -55,18 +54,14 @@
   z-index: -1;
 }
 
-
 .category-section {
   display: grid;
   grid-template-columns: 64% 36%;
 }
 
-
 .category-img {
   width: 100%;
-  
 }
-
 
 .hero-shape {
   position: absolute;
@@ -79,16 +74,116 @@
   height: 200px;
 }
 
-.icon-container img{
+.icon-container img {
   height: 1.5rem;
   padding-left: 0.5rem;
 }
 
-
-.icon-container img:hover{
+.icon-container img:hover {
   cursor: pointer;
 }
 
 .one-step-shop {
   font-weight: 600;
 }
+
+.button {
+  width: 240px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  border: 3px solid #ffd702;
+  background-color: #ffd702;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+}
+
+.text {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27, 27, 27);
+  color: white;
+}
+
+.arrow path {
+  fill: rgb(19, 19, 19);
+}
+
+.button:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60vh 30vh;
+  width: 100vw;
+  
+}
+.category-items {
+  background-color: aliceblue;
+  color: blueviolet;
+}
+
+.category-1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.category-1 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.category-2 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.category-3 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.category-4 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.category-5 {
+  height: 100%;
+  width: 100%;
+  background-color: #ffd702;
+  color: rgb(37, 37, 37);
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
