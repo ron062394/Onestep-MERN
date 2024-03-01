@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Signup.css';
 import { useSignup } from '../hooks/useSignup';
+import Background from '../components/Background';
+
 
 function Signup() {
   const { signup, handleInputChange, isLoading, error } = useSignup(); 
@@ -12,6 +14,7 @@ function Signup() {
 
   return (
     <div className="signup-section">
+      <Background/>
       <div className="signup-container">
         <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" />
         <div className="signup-card">

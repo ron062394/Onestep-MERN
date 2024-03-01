@@ -1,39 +1,51 @@
-
 /* Header section */
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 140px;
-    align-items: center;
-    padding-top: 1.5%;
-    height: 10vh;
-  }
-  
-  .link-list-container {
-    list-style: none;
-    display: flex; 
-  }
-  
-  .link-list-container li {
-    margin-left: 1.5rem; 
-  }
-  
-  .link-list-container li:hover {
-    color: #FFD702; 
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 140px;
+  align-items: center;
+  padding-top: 1.5%;
+  height: 8vh;
+}
 
-  
-  .search-input {
-    height: 1.5rem;
-    width: 30rem;
-    border-radius: 20px;
-    padding-left: 1rem;
-    font-size: 16px;
-  }
+.link-list-container {
+  list-style: none;
+  display: flex;
+}
+
+.link-list-container li {
+  margin-left: 1.5rem;
+}
+
+.link-list-container li:hover {
+  color: #ffd702;
+  cursor: pointer;
+}
+
+.search-input {
+  height: 1.5rem;
+  width: 30rem;
+  border-radius: 20px;
+  padding-left: 1rem;
+  font-size: 16px;
+}
 .vertical-line {
   margin-left: 1rem;
+}
+
+
+.active {
+  position: relative;
+  padding-bottom: 0.15rem;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* Adjust this value to control the height of the border */
+  left: 0;
+  width: 50%; /* This will make the border cover only half of the width */
+  height: 2px; /* Border thickness */
+  background-color: #ffd702; /* Border color */
 }

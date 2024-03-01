@@ -50,20 +50,30 @@
     text-align: center;
 }
 
-.cart-item-qty span:nth-child(1) {
+.increament-btn {
     background-color: #22002E;
     color: #f3f3f3;
 }
+
+.increament-btn:hover {
+    cursor: pointer;
+    
+}
+
+
 
 .cart-item-qty span:nth-child(2) {
     background-color: #ffffff;
 }
 
-.cart-item-qty span:nth-child(3) {
+.decreament-btn {
     background-color: #f4f4f4;
 }
 
+.decreament-btn:hover {
+    cursor: pointer;
 
+}
 
 .total-container {
     display: flex;

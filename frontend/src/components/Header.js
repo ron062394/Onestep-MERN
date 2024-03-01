@@ -2,6 +2,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const { user } = useAuthContext();
@@ -13,44 +14,44 @@ function Header() {
   return (
     <header className="header-section">
       <span className="logo">
-        <Link className="no-text-decoration" to="/">
+        <NavLink className="no-text-decoration" to="/" activeClassName="active">
           <span className="yellow-color">O</span>NES
           <span className="yellow-color">T</span>E
           <span className="yellow-color">P</span>
-        </Link>
+        </NavLink>
       </span>
       <input className="search-input" type="text" placeholder="Search" />
       <nav>
         <ul className="link-list-container">
-          <li className="selected">
-            <Link className="no-text-decoration" to="/">
+          <li>
+            <NavLink className="no-text-decoration" to="/" activeClassName="active" exact>
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>About us</li>
           {user ? (
             <>
-            <li>
-              <span>Hi {user.firstName},</span>
-            </li>
+              <li>
+                <span>Hi {user.firstName},</span>
+              </li>
               <span className="vertical-line">|</span>
-            <li>
-              <span onClick={handleLogout}>Logout</span>
-            </li> 
+              <li>
+                <span onClick={handleLogout}>Logout</span>
+              </li> 
             </>
 
           ) : (
             <>
               <li>
-                <Link className="no-text-decoration" to="/login">
+                <NavLink className="no-text-decoration" to="/login" activeClassName="active">
                   Login
-                </Link>
+                </NavLink>
               </li>
               <li>|</li>
               <li>
-                <Link className="no-text-decoration" to="/register">
+                <NavLink className="no-text-decoration" to="/register" activeClassName="active">
                   Signup
-                </Link>
+                </NavLink>
               </li>
             </>
           )}

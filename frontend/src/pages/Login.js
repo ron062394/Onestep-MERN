@@ -2,6 +2,7 @@ import { useLogin } from '../hooks/useLogin';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import Background from '../components/Background';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -25,6 +26,7 @@ function Login() {
 
   return (
     <div className="login-section">
+      <Background/>
       <div className="login-container">
         <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" />
         <div className="login-card">

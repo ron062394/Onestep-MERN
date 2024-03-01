@@ -1,22 +1,14 @@
 import "./Home.css";
 import ProductList from "../components/ProductList";
+import Background from "../components/Background";
+
 function Home() {
   return (
     <div className="homepage">
-      <ul class="background">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <Background/>
       <div className="hero-section">
         <div className="hero-section-container">
+
           <div className="hero-text-container">
             <h1 className="hero-text">
               <div>Stepping into</div>
@@ -29,11 +21,13 @@ function Home() {
           </div>
 
           <div className="hero-img-container">
+            <img className="hero-shape" src="https://i.imgur.com/EgXCip1.png" alt="" />
             <img
               className="hero-image"
               src="https://i.imgur.com/JEi3BZJ.png"
               alt="banner-shoe"
             />
+            {/* <img className="seal" src="https://png.pngtree.com/png-vector/20220123/ourmid/pngtree-authentic-stamp-icon-mark-post-postmark-vector-png-image_15759446.png" alt="" /> */}
           </div>
 
           <div className="hero-text-container-2">

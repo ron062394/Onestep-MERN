@@ -10,7 +10,7 @@ const {
 
 
 router.post('/',authMiddleware, addToCart);
-router.get('/', getCart);
+router.get('/', authMiddleware, getCart);
 router.put('/:productId',authMiddleware, removeFromCart);
 
 

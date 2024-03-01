@@ -80,15 +80,17 @@ function Cart() {
                   {/* Assuming size is a string */}
                 </div>
                 <div className="cart-item-qty">
-                  <span>+</span>
+                  <span className="increament-btn">+</span>
                   <span>{item.quantity}</span>
-                  <span>-</span>
+                  <span className="decreament-btn">-</span>
                 </div>
                 <div>
                   <span>x</span>
                 </div>
                 <div>
-                  <span>${item.product.price * item.quantity}</span>
+                  <span>
+                    ${(item.product.price * item.quantity).toFixed(2)}
+                  </span>
                 </div>
               </div>
             ))}
@@ -100,10 +102,12 @@ function Cart() {
             </span>
             <span>
               Total:{" "}
-              {cart.reduce(
-                (total, item) => total + item.quantity * item.product.price,
-                0
-              )}
+              {cart
+                .reduce(
+                  (total, item) => total + item.quantity * item.product.price,
+                  0
+                )
+                .toFixed(2)}
               $
             </span>
           </div>
