@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useAuthContext } from '../hooks/useAuthContext';
+import { useAuthContext } from "../hooks/useAuthContext";
 import ProductList from "../components/ProductList";
 import "./ProductView.css";
 import Loading from "../components/Loading";
@@ -11,6 +11,7 @@ function ProductView() {
   const [product, setProduct] = useState(null);
   const { user } = useAuthContext();
   const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("");
   const [loading, setLoading] = useState(true); // State to track loading status
   const navigate = useNavigate();
 
@@ -49,12 +50,15 @@ function ProductView() {
     }
   };
 
+  const handleSizeChange = (size) => {
+    setSelectedSize(size);
+  };
+
   return (
     <div className="view-product-component">
-
       {loading ? (
         <div className="loading-container">
-                <Loading/>
+          <Loading />
         </div>
       ) : (
         product && (
@@ -68,10 +72,16 @@ function ProductView() {
                 <div>
                   <span>Sizes: </span>
                   {product.size.map((size, index) => (
-                    <span key={index}>
+                    <label key={index}>
+                      <input
+                        type="radio"
+                        name="size"
+                        value={size}
+                        checked={selectedSize === size}
+                        onChange={() => handleSizeChange(size)}
+                      />
                       {size}
-                      {index !== product.size.length - 1 && ", "}
-                    </span>
+                    </label>
                   ))}
                 </div>
                 <div className="emphasized">${product.price}</div>
