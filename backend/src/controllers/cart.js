@@ -12,15 +12,17 @@ const addToCart = async (req, res) => {
             cart = new Cart({ user: req.user._id, products });
         } else {
             // If cart exists, loop through each product to add or update
-            products.forEach(({ product, quantity }) => {
-                const existingProductIndex = cart.products.findIndex(item => item.product.toString() === product);
+            products.forEach(({ product, size, quantity }) => {
+                const existingProductIndex = cart.products.findIndex(item => 
+                    item.product.toString() === product && item.size === size
+                );
 
                 if (existingProductIndex !== -1) {
-                    // If product is already in the cart, update its quantity
+                    // If product with the same ID and size is already in the cart, update its quantity
                     cart.products[existingProductIndex].quantity += quantity;
                 } else {
                     // If product is not in the cart, add it
-                    cart.products.push({ product, quantity });
+                    cart.products.push({ product, size, quantity });
                 }
             });
         }
@@ -35,6 +37,7 @@ const addToCart = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
 
 
 const getCart = async (req, res) => {

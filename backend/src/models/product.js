@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    brand: {  // New field for brand, placed after product
+    brand: {  
         type: String
     },
     description: { 
@@ -27,8 +27,15 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    size: [{
-        type: String
+    sizes: [{ // Change 'size' to 'sizes' to store quantities for each size
+        size: {
+            type: String,
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true
+        }
     }],
     collection: {
         type: String
@@ -48,10 +55,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    stocks: {
-        type: Number,
-        default: 0
-    },
+    // 'stocks' field is removed as each size will have its own quantity
     promotion: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Promotion',
