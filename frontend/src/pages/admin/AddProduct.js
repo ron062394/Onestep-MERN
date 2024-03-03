@@ -15,6 +15,8 @@ function AddProduct() {
         quantity: 0
     });
 
+    const [selectedSizes, setSelectedSizes] = useState([]);
+
     const handleInputChange = (e) => {
         setFormData({
             ...formData,
@@ -22,22 +24,18 @@ function AddProduct() {
         });
     };
 
+    const handleSizeAdd = () => {
+        setSelectedSizes([...selectedSizes, { size: formData.size, quantity: formData.quantity }]);
+        setFormData({
+            ...formData,
+            size: '',
+            quantity: 0
+        });
+    };
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         console.log("submitted", formData);
-
-        try {
-            const response = await fetch('/api/product/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',    
-                },
-                body: JSON.stringify(formData)
-            });       
-        } catch (error) {
-            console.error(error);            
-        }
-
 
         
     };
@@ -97,16 +95,6 @@ function AddProduct() {
                 </label>
 
                 <label>
-                    Quantity:
-                    <input
-                        type="number"
-                        name="quantity"
-                        value={formData.quantity}
-                        onChange={handleInputChange}
-                    />
-                </label>
-
-                <label>
                     Category:
                     <input
                         type="text"
@@ -116,15 +104,27 @@ function AddProduct() {
                     />
                 </label>
 
-                <label>
-                    Size:
-                    <input
-                        type="text"
-                        name="size"
-                        value={formData.size}
-                        onChange={handleInputChange}
-                    />
-                </label>
+                <div className="size-selection">
+                    <label>
+                        Size:
+                        <input
+                            type="text"
+                            name="size"
+                            value={formData.size}
+                            onChange={handleInputChange}
+                        />
+                    </label>
+                    <label>
+                        Quantity:
+                        <input
+                            type="number"
+                            name="quantity"
+                            value={formData.quantity}
+                            onChange={handleInputChange}
+                        />
+                    </label>
+                    <button type="button" onClick={handleSizeAdd}>Add Size</button>
+                </div>
 
                 <label>
                     Collection:
@@ -145,6 +145,12 @@ function AddProduct() {
                         onChange={handleInputChange}
                     />
                 </label>
+
+                <div className="selected-sizes">
+                    {selectedSizes.map((size, index) => (
+                        <div key={index}>{size.size} - {size.quantity}</div>
+                    ))}
+                </div>
 
                 <button type='submit' className='tertiary-btn'>Add Product</button>
 
