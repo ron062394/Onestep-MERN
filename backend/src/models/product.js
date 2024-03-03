@@ -16,15 +16,16 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    image: {
+    images: {
+        type: [String], // Change type to an array of strings
+        required: true
+    },
+    colors: {
         type: String,
         required: true
     },
-    colors: [{
-        type: String
-    }],
     category: {
-        type: String,
+        type: [String], // Change type to an array of strings for multiple categories
         required: true
     },
     sizes: [{ // Change 'size' to 'sizes' to store quantities for each size
@@ -55,7 +56,6 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    // 'stocks' field is removed as each size will have its own quantity
     promotion: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Promotion',
