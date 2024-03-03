@@ -45,6 +45,8 @@ function Cart() {
     console.log(cart); // Log the updated value of cart
   }, [cart]);
 
+  console.log("Cart state:", cart); // Log the cart state outside JSX
+
   return (
     <div className="cart-section">
       <div className="cart-section-container">
@@ -64,20 +66,24 @@ function Cart() {
           </div>
 
           {/* Check if cart is an array before using map */}
+          {/* Check if cart is an array before using map */}
           {Array.isArray(cart) &&
             cart.map((item) => (
               <div key={item._id} className="cart-content-container">
                 <div>
-                  <img
-                    className="cart-product-img"
-                    src={item.product.image}
-                    alt="product-img"
-                  />
-                  <span>{item.product.product}</span>
+                  {item.product &&
+                    item.product.images &&
+                    item.product.images[0] && (
+                      <img
+                        className="cart-product-img"
+                        src={item.product.images[0]} // Access the first image
+                        alt="product-img"
+                      />
+                    )}
+                  {item.product && <span>{item.product.product}</span>}
                 </div>
                 <div>
-                  <span>{item.product.size}</span>{" "}
-                  {/* Assuming size is a string */}
+                  <span>{item.size}</span> {/* Access the 'size' directly */}
                 </div>
                 <div className="cart-item-qty">
                   <span className="increament-btn">+</span>

@@ -24,7 +24,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    category: {
+    categories: {
         type: [String], // Change type to an array of strings for multiple categories
         required: true
     },

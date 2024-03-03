@@ -4,6 +4,7 @@ import { useState } from "react";
 function AddProduct() {
   const [formData, setFormData] = useState({
     product: "",
+    brand: "",
     description: "",
     price: 0,
     images: [],
@@ -75,18 +76,19 @@ function AddProduct() {
       }
 
       console.log("Product added successfully");
-      setFormData({
-        product: "",
-        description: "",
-        price: 0,
-        images: [],
-        colors: "",
-        categories: [],
-        size: "",
-        collection: "",
-        features: "",
-        quantity: 0,
-      });
+      // setFormData({
+      //   product: "",
+      //   brand: "",
+      //   description: "",
+      //   price: 0,
+      //   images: [],
+      //   colors: "",
+      //   categories: [],
+      //   size: "",
+      //   collection: "",
+      //   features: "",
+      //   quantity: 0,
+      // });
       setSelectedSizes([]);
     } catch (error) {
       console.error("Error adding product:", error.message);
@@ -113,7 +115,14 @@ function AddProduct() {
           onChange={handleInputChange}
           required
         />
-
+        <label>Brand:</label>
+        <input
+          type="text"
+          name="brand"
+          value={formData.brand}
+          onChange={handleInputChange}
+          required
+        />
         <label>Description:</label>
         <textarea
           name="description"
@@ -212,11 +221,11 @@ function AddProduct() {
             <input
               type="checkbox"
               name="category"
-              value="Hi-Top"
-              checked={formData.categories.includes("Hi-Top")}
+              value="High-Top"
+              checked={formData.categories.includes("High-Top")}
               onChange={handleCategoryChange}
             />
-            Hi-Top
+            High-Top
           </label>
           <label>
             <input
