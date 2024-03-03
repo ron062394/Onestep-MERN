@@ -21,7 +21,14 @@ function ProductView() {
     fetch(`/api/product/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        setProduct(data);
+        // Calculate total stocks based on sizes
+        const totalStocks = data.sizes.reduce(
+          (acc, size) => acc + size.quantity,
+          0
+        );
+        // Merge the calculated total stocks into the product data
+        const updatedProduct = { ...data, stocks: totalStocks };
+        setProduct(updatedProduct);
         setLoading(false); // Set loading to false when data is fetched
       })
       .catch((error) => console.error(error));
@@ -61,6 +68,14 @@ function ProductView() {
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
+    // Find the selected size object
+    const selectedSizeObj = product.sizes.find(
+      (sizeObj) => sizeObj.size === size
+    );
+    // Update the product data with the new stock information
+    const updatedProduct = { ...product, stocks: selectedSizeObj.quantity };
+    setProduct(updatedProduct);
+    setQuantity(1);
   };
 
   const handleMainImageChange = (image) => {
@@ -148,6 +163,7 @@ function ProductView() {
                     onChange={(e) => setQuantity(e.target.value)}
                     max={product.stocks}
                     className="purchase-qty"
+                    disabled={!selectedSize} // Disable the input if no size is selected
                   />
 
                   <button
@@ -205,4 +221,3 @@ function ProductView() {
 }
 
 export default ProductView;
-
