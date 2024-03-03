@@ -13,9 +13,11 @@ function ProductView() {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
   const [loading, setLoading] = useState(true); // State to track loading status
+  const [mainImage, setMainImage] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
+    setLoading(true);
     fetch(`/api/product/${id}`)
       .then((response) => response.json())
       .then((data) => {
@@ -61,6 +63,10 @@ function ProductView() {
     setSelectedSize(size);
   };
 
+  const handleMainImageChange = (image) => {
+    setMainImage(image);
+  };
+
   return (
     <div className="view-product-component">
       {loading ? (
@@ -72,8 +78,12 @@ function ProductView() {
           <div className="view-product">
             <div className="view-product-container">
               <div className="img-container shadow">
-                <img src={product.image} alt="" />
+                <img
+                  src={mainImage || product.images[0]}
+                  alt="product-main-img-view"
+                />
               </div>
+
               <div className="product-info-container shadow">
                 <h3>{product.product}</h3>
                 <div>
@@ -112,30 +122,22 @@ function ProductView() {
                   <span>|</span>
                   <span>Stocks: {product.stocks}</span>
                 </div>
-
                 <div className="img-preview-container">
-                  <div className="img-selected">
-                    <img
-                      className="img-preview"
-                      src={product.image}
-                      alt="img-preview"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="img-preview"
-                      src={product.image}
-                      alt="img-preview"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      className="img-preview"
-                      src={product.image}
-                      alt="img-preview"
-                    />
-                  </div>
+                  {product.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={index === 0 ? "img-selected" : ""}
+                    >
+                      <img
+                        className="img-preview"
+                        src={image}
+                        alt="img-preview"
+                        onClick={() => handleMainImageChange(image)}
+                      />
+                    </div>
+                  ))}
                 </div>
+
                 <div className="btn-container">
                   <input
                     type="number"
@@ -203,3 +205,4 @@ function ProductView() {
 }
 
 export default ProductView;
+

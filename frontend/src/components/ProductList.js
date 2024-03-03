@@ -28,12 +28,20 @@ function ProductList() {
                     src="https://i.imgur.com/XsLLxLD.png"
                     alt="rate-star"
                   />
-                  {(product.totalRatings / product.ratings).toFixed(2)}
+                  {product.ratings !== 0
+                    ? (product.totalRatings / product.ratings).toFixed(2)
+                    : 0}
                   <span>({product.ratings})</span>
                 </span>
               </div>
               <div className="product-img-container">
-                <img className="product-card-img" src={product.image} alt="" />
+                {product.images.length > 0 && (
+                  <img
+                    className="product-card-img"
+                    src={product.images[0]}
+                    alt="product-img-preview"
+                  />
+                )}
               </div>
 
               <div className="product-card-price emphasized">
