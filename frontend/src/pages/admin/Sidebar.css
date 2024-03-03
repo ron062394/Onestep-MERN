@@ -1,0 +1,48 @@
+.sidebar-section {
+    background-color: #204C38;
+    height: 100vh;
+    width: 15vw;
+}
+
+
+.logo-container {
+    width: 100%;
+    background-color: #22002E; 
+    height: 5vh;  
+}
+
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+}
+
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    height: 10vh;
+}
+
+.sidebar-footer div{
+    background-color: #132b20;
+    font-size: 0.7rem;
+    height: 5vh;
+    display: grid;
+    place-items: center;
+}
+
+
+.admin-logout-btn {
+    cursor: pointer;
+    width: auto;
+}
+
+.admin-btn-container {
+    display:flex;
+}
+.admin-btn-container img {
+    height: 2rem;
+}
