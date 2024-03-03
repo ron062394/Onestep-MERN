@@ -10,3 +10,19 @@
     border-radius: 20px;
     color: black;
 }
+
+
+.add-product {
+
+}
+
+.add-product input {
+    height: 2rem;
+    width:30rem;
+    border: 1px solid #204C38;
+    border-radius: 5px;
+}
+
+.selected-images img {
+    height: 100px;
+}

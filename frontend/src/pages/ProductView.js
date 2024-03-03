@@ -28,10 +28,10 @@ function ProductView() {
   const handleAddToCart = async () => {
     // Check if a size has been selected
     if (!selectedSize) {
-      alert('Please select a size');
+      alert("Please select a size");
       return;
     }
-  
+
     const cartData = {
       products: [
         {
@@ -41,7 +41,7 @@ function ProductView() {
         },
       ],
     };
-  
+
     const response = await fetch("/api/cart", {
       method: "POST",
       headers: {
@@ -50,13 +50,13 @@ function ProductView() {
       },
       body: JSON.stringify(cartData),
     });
-  
+
     if (response.ok) {
       console.log("success");
       navigate("/cart");
     }
   };
-  
+
   const handleSizeChange = (size) => {
     setSelectedSize(size);
   };
@@ -78,19 +78,20 @@ function ProductView() {
                 <h3>{product.product}</h3>
                 <div>
                   <span>Sizes: </span>
-                  {product.size.map((size, index) => (
+                  {product.sizes.map((sizeObj, index) => (
                     <label key={index}>
                       <input
                         type="radio"
                         name="size"
-                        value={size}
-                        checked={selectedSize === size}
-                        onChange={() => handleSizeChange(size)}
+                        value={sizeObj.size}
+                        checked={selectedSize === sizeObj.size}
+                        onChange={() => handleSizeChange(sizeObj.size)}
                       />
-                      {size}
+                      {sizeObj.size}
                     </label>
                   ))}
                 </div>
+
                 <div className="emphasized">${product.price}</div>
                 <div className="rate-info">
                   <span>
@@ -99,8 +100,11 @@ function ProductView() {
                       src="https://i.imgur.com/XsLLxLD.png"
                       alt="rate-star"
                     />
-                    {(product.totalRatings / product.ratings).toFixed(2)}
+                    {product.ratings !== 0
+                      ? (product.totalRatings / product.ratings).toFixed(2)
+                      : 0}
                   </span>
+
                   <span>|</span>
                   <span>Ratings: {product.ratings}</span>
                   <span>|</span>

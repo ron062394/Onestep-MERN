@@ -49,3 +49,10 @@ header {
   height: 2px; /* Border thickness */
   background-color: #ffd702; /* Border color */
 }
+
+
+
+.logo .active::after {
+  content: ""; 
+  width: 0;
+}

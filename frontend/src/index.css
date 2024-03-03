@@ -20,6 +20,8 @@ code {
 .logo {
   font-size: 34px;
 }
+
+
 .yellow-color {
   color: #FFD702;
 
@@ -71,14 +73,7 @@ code {
   display: flex;
 }
 
-button:hover {
-  background-color: #FFD702;
-  color: rgb(255, 255, 255);
-  box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
-  -webkit-box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
-  -moz-box-shadow: 1px 10px 11px -5px rgba(0,0,0,0.22);
-  cursor: pointer;
-}
+
 
 
 /* Typography */
@@ -98,4 +93,10 @@ button:hover {
 
 .text-underlined {
   text-decoration: underline;
+}
+
+
+.admin-section {
+  display: flex;
+  background-color: #e1e4e6;
 }
