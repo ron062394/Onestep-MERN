@@ -26,15 +26,22 @@ function ProductView() {
   }, [id]);
 
   const handleAddToCart = async () => {
+    // Check if a size has been selected
+    if (!selectedSize) {
+      alert('Please select a size');
+      return;
+    }
+  
     const cartData = {
       products: [
         {
           product: id,
+          size: selectedSize, // Include the selected size
           quantity: quantity,
         },
       ],
     };
-
+  
     const response = await fetch("/api/cart", {
       method: "POST",
       headers: {
@@ -43,13 +50,13 @@ function ProductView() {
       },
       body: JSON.stringify(cartData),
     });
-
+  
     if (response.ok) {
       console.log("success");
       navigate("/cart");
     }
   };
-
+  
   const handleSizeChange = (size) => {
     setSelectedSize(size);
   };
