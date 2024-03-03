@@ -6,9 +6,9 @@ function AddProduct() {
     product: "",
     description: "",
     price: 0,
-    images: [], // Change to accept an array of strings
+    images: [],
     colors: "",
-    category: "",
+    categories: [],
     size: "",
     collection: "",
     features: "",
@@ -36,56 +36,69 @@ function AddProduct() {
     });
   };
 
+  const handleCategoryChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setFormData({
+        ...formData,
+        categories: [...formData.categories, value],
+      });
+    } else {
+      setFormData({
+        ...formData,
+        categories: formData.categories.filter(
+          (category) => category !== value
+        ),
+      });
+    }
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const productData = {
         ...formData,
-        sizes: selectedSizes, // Include selected sizes in the form data
+        sizes: selectedSizes,
       };
-  
-      const response = await fetch('/api/product', {
-        method: 'POST',
+
+      const response = await fetch("/api/product", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(productData),
       });
-  
+
       if (!response.ok) {
-        throw new Error('Failed to add product');
+        throw new Error("Failed to add product");
       }
-  
-      console.log(formData)
-      // Clear form data after successful submission
+
+      console.log("Product added successfully");
       setFormData({
         product: "",
         description: "",
         price: 0,
-        images: [], // Clear images array
+        images: [],
         colors: "",
-        category: "",
+        categories: [],
         size: "",
         collection: "",
         features: "",
         quantity: 0,
       });
       setSelectedSizes([]);
-  
-      console.log('Product added successfully');
     } catch (error) {
-      console.error('Error adding product:', error.message);
+      console.error("Error adding product:", error.message);
     }
   };
-  
+
   const handleImageAdd = () => {
     setFormData({
       ...formData,
-      images: [...formData.images, formData.image], // Concatenate new image with existing images
-      image: "", // Clear input field after adding image
+      images: [...formData.images, formData.image],
+      image: "",
     });
-    console.log(formData)
   };
 
   return (
@@ -116,7 +129,7 @@ function AddProduct() {
           onChange={handleInputChange}
         />
 
-        <label>Images:</label> {/* Change label */}
+        <label>Images:</label>
         <input
           type="text"
           name="image"
@@ -126,7 +139,7 @@ function AddProduct() {
         <button type="button" onClick={handleImageAdd}>
           Add Image
         </button>
-        <div className="selected-images"> {/* Display selected images */}
+        <div className="selected-images">
           {formData.images.map((image, index) => (
             <div key={index}>
               <img src={image} alt={`Image ${index + 1}`} />
@@ -134,24 +147,118 @@ function AddProduct() {
           ))}
         </div>
 
-        <label>
-          Colors:
-          <input
-            type="text"
-            name="colors"
-            value={formData.colors}
-            onChange={handleInputChange}
-            placeholder="Enter colors"
-          />
-        </label>
-
-        <label>Category:</label>
+        <label>Colors:</label>
         <input
           type="text"
-          name="category"
-          value={formData.category}
+          name="colors"
+          value={formData.colors}
           onChange={handleInputChange}
+          placeholder="Enter colors"
         />
+
+        <label>Category:</label>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Men"
+              checked={formData.categories.includes("Men")}
+              onChange={handleCategoryChange}
+            />
+            Men
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Women"
+              checked={formData.categories.includes("Women")}
+              onChange={handleCategoryChange}
+            />
+            Women
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Unisex"
+              checked={formData.categories.includes("Unisex")}
+              onChange={handleCategoryChange}
+            />
+            Unisex
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Kids"
+              checked={formData.categories.includes("Kids")}
+              onChange={handleCategoryChange}
+            />
+            Kids
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Sports"
+              checked={formData.categories.includes("Sports")}
+              onChange={handleCategoryChange}
+            />
+            Sports
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Hi-Top"
+              checked={formData.categories.includes("Hi-Top")}
+              onChange={handleCategoryChange}
+            />
+            Hi-Top
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Low-Top"
+              checked={formData.categories.includes("Low-Top")}
+              onChange={handleCategoryChange}
+            />
+            Low-Top
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Mid-Top"
+              checked={formData.categories.includes("Mid-Top")}
+              onChange={handleCategoryChange}
+            />
+            Mid-Top
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Platform"
+              checked={formData.categories.includes("Platform")}
+              onChange={handleCategoryChange}
+            />
+            Platform
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value="Heeled"
+              checked={formData.categories.includes("Heeled")}
+              onChange={handleCategoryChange}
+            />
+            Heeled
+          </label>
+        </div>
 
         <div className="size-selection">
           <label>Size:</label>
@@ -164,11 +271,11 @@ function AddProduct() {
 
           <label>Quantity:</label>
           <input
-              type="number"
-              name="quantity"
-              value={formData.quantity}
-              onChange={handleInputChange}
-            />
+            type="number"
+            name="quantity"
+            value={formData.quantity}
+            onChange={handleInputChange}
+          />
 
           <button type="button" onClick={handleSizeAdd}>
             Add Size
@@ -177,18 +284,18 @@ function AddProduct() {
 
         <label>Collection:</label>
         <input
-            type="text"
-            name="collection"
-            value={formData.collection}
-            onChange={handleInputChange}
-          />
+          type="text"
+          name="collection"
+          value={formData.collection}
+          onChange={handleInputChange}
+        />
 
         <label>Features:</label>
         <input
-            type="text"
-            name="features"
-            value={formData.features}
-            onChange={handleInputChange}
+          type="text"
+          name="features"
+          value={formData.features}
+          onChange={handleInputChange}
         />
 
         <div className="selected-sizes">
