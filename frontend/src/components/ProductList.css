@@ -13,13 +13,11 @@
 .product-img-container {
     display: grid;
     place-items: center;
-    height: 11em;
-    width: 11em;
     margin: auto;
-    transition: width 0.7s ease;
 }
 
 .product-card-img {
+    height: 11rem;
     width: 100%;
     object-fit: cover;
     border: 1px solid rgb(238, 238, 238);
@@ -28,15 +26,17 @@
 
 .new {
     background-color: #05791F;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     border-radius: 4px;
     color: white;
+    font-size: 0.75rem;
 }
 
 .product-uppertext {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 
@@ -74,7 +74,6 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #204C38;
-    height: 400px;
     background-color: white;
     border-radius: 10px;        
     border: 1px solid #F4F4F4;

@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Sidebar from "./pages/admin/Sidebar";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminHeader from "./pages/admin/AdminHeader";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/admin" element={<Dashboard />} />
+          <Route path="/about-us" element={<About />} />
         </Routes>
         <Footer/>
       </Router>

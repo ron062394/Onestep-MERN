@@ -1,8 +1,7 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { NavLink } from "react-router-dom";
 
 function Header() {
   const { user } = useAuthContext();
@@ -14,7 +13,7 @@ function Header() {
   return (
     <header className="header-section">
       <span className="logo">
-        <NavLink className="no-text-decoration" to="/" activeClassName="active">
+        <NavLink className="no-text-decoration" to="/" activeClassName="active" exact>
           <span className="yellow-color">O</span>NES
           <span className="yellow-color">T</span>E
           <span className="yellow-color">P</span>
@@ -28,7 +27,11 @@ function Header() {
               Home
             </NavLink>
           </li>
-          <li>About us</li>
+          <li>
+            <NavLink className="no-text-decoration" to="/about-us" activeClassName="active">
+              About us
+            </NavLink>
+          </li>
           {user ? (
             <>
               <li>
@@ -36,8 +39,11 @@ function Header() {
               </li>
               <span className="vertical-line">|</span>
               <li>
+                Cart
+              </li>
+              {/* <li>
                 <span onClick={handleLogout}>Logout</span>
-              </li> 
+              </li>  */}
             </>
 
           ) : (
