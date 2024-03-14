@@ -16,7 +16,6 @@
     height: auto;
     display: grid;
     place-items: center;
-    border-radius: 5px;
   }
   
   .img-container img {
@@ -50,7 +49,6 @@
   .product-info-container {
     background-color: rgb(255, 255, 255);
     padding: 2rem;
-    border-radius: 5px;
   }
   
   .product-info-container div {
@@ -69,7 +67,6 @@
     background-color: hsl(0, 0%, 100%);
     margin-top: 1rem;
     padding: 2rem;
-    border-radius: 5px;
     margin: 10px 140px;
   }
   

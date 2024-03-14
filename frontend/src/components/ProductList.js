@@ -1,12 +1,11 @@
-// ProductList.js
-
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 import "./ProductList.css";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch("https://onestep-api.vercel.app/api/product")
       .then((response) => response.json())
@@ -15,6 +14,11 @@ function ProductList() {
       })
       .catch((error) => console.error(error));
   }, []);
+
+  const getRandomImage = (images) => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
 
   return (
     <div className="product-list-section">
@@ -42,6 +46,12 @@ function ProductList() {
                     className="product-card-img"
                     src={product.images[0]}
                     alt="product-img-preview"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.src = getRandomImage(product.images);
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.src = product.images[0];
+                    }}
                   />
                 )}
               </div>
