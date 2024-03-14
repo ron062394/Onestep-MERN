@@ -180,7 +180,7 @@ function ProductView() {
                 </button>
 
                     <Link
-                      to={`/cart/${product._id}`}
+                      to={`/checkout/${product._id}`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       <button class="button"

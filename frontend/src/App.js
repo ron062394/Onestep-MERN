@@ -12,6 +12,7 @@ import Sidebar from "./pages/admin/Sidebar";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminHeader from "./pages/admin/AdminHeader";
 import About from "./pages/About";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/register" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/about-us" element={<About />} />
         </Routes>
