@@ -26,12 +26,12 @@
   .new {
     background-color: #05791f;
     padding: 0 0.5rem;
-    border-radius: 4px;
     color: white;
     font-size: 0.75rem;
   }
   
   .product-uppertext {
+
     position: absolute;
     
   }
