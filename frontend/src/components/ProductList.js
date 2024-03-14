@@ -8,7 +8,7 @@ import "./ProductList.css";
 function ProductList() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("/api/product")
+    fetch("https://onestep-api.vercel.app/api/product")
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
