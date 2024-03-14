@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 require('dotenv').config()
 
 const app = express();
 
 //Middleware
+app.use(cors({ origin: 'https://onestep-iota.vercel.app' }));
 app.use(express.json());
 app.use((req, res, next)=> {
   console.log(req.path, req.method);
