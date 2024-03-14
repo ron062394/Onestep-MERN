@@ -18,7 +18,7 @@ function ProductView() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/product/${id}`)
+    fetch(`https://onestep-api.vercel.app/api/product/${id}`)
       .then((response) => response.json())
       .then((data) => {
         // Calculate total stocks based on sizes
