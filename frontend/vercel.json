@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "frontend",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/api/product", "dest": "https://onestep-api.vercel.app/api/product" }
+    ]
+  }
+  
