@@ -14,7 +14,7 @@ const addToCart = async (req, res) => {
             // If cart exists, loop through each product to add or update
             products.forEach(({ product, size, quantity }) => {
                 const existingProductIndex = cart.products.findIndex(item => 
-                    item.product.toString() === product && item.size === size
+                    item.product.toString() === product.toString() && item.size === size
                 );
 
                 if (existingProductIndex !== -1) {

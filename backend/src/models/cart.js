@@ -15,6 +15,10 @@ const cartSchema = new mongoose.Schema({
     quantity: {
       type: Number,
       required: true
+    },
+    size: { // Add the size field
+      type: String, // You can adjust the type based on your requirements
+      required: true
     }
   }]
 }, { timestamps: true });

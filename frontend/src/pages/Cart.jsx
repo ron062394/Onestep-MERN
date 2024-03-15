@@ -83,7 +83,7 @@ function Cart() {
                   {item.product && <span>{item.product.product}</span>}
                 </div>
                 <div>
-                  <span>{item.size}</span> {/* Access the 'size' directly */}
+                  <span>{item.product.size}</span> {/* Access the 'size' directly */}
                 </div>
                 <div className="cart-item-qty">
                   <span className="increament-btn">+</span>
@@ -107,14 +107,13 @@ function Cart() {
               Quantity: {cart.reduce((total, item) => total + item.quantity, 0)}
             </span>
             <span>
-              Total:{" "}
+              Total:{" "}$
               {cart
                 .reduce(
                   (total, item) => total + item.quantity * item.product.price,
                   0
                 )
                 .toFixed(2)}
-              $
             </span>
           </div>
 
