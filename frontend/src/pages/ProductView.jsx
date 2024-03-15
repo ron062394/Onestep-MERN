@@ -51,7 +51,7 @@ function ProductView() {
       ],
     };
 
-    const response = await fetch("/api/cart", {
+    const response = await fetch("https://onestep-api.vercel.app/api/cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
