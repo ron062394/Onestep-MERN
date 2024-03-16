@@ -14,10 +14,21 @@ const createOrder = async (req, res) => {
 const checkoutCart = async (req, res) => {
     try {
         const { cartId } = req.params;
-        const cart = await Cart.findById(cartId).populate('products.product');
+
+        // Find the cart by its ID and populate the 'user' field
+        const cart = await Cart.findById(cartId).populate('user').populate('products.product');
+        
+        // Check if the cart exists
         if (!cart) {
             return res.status(404).json({ message: 'Cart not found' });
         }
+
+        // Check if the authenticated user owns the cart
+        if (cart.user._id.toString() !== req.user._id.toString()) {
+            return res.status(403).json({ message: 'Unauthorized access to cart' });
+        }
+
+        // Proceed with checkout process
         const order = new Order({
             user: cart.user,
             products: cart.products.map(item => ({
@@ -36,6 +47,7 @@ const checkoutCart = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
 
 module.exports = {
     createOrder,
