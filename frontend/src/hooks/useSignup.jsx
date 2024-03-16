@@ -29,13 +29,13 @@ export const useSignup = () => {
             const json = await response.json();
 
             if (!response.ok) {
-                setError(json.error || 'An error occurred during signup.');
+                setError(json || 'An error occurred during signup.');
             } else {
                 localStorage.setItem('user', JSON.stringify(json));
                 dispatch({ type: 'LOGIN', payload: json });
             }
         } catch (error) {
-            setError('An error occurred during signup.');
+            setError('An error occurred during signup.')
         } finally {
             setIsLoading(false);
         }
@@ -47,7 +47,6 @@ export const useSignup = () => {
             ...prevState,
             [name]: value
         }));
-        console.log('inside the hhandle input',formData); // Add this line to check if formData is being updated
     };
 
     return { signup, isLoading, error, handleInputChange, formData };

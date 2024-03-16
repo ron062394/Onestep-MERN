@@ -42,7 +42,7 @@ function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/about-us" element={<About />} />
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </Router>
     </div>
   );
