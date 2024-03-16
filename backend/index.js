@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 app.use('/api/product', require('./src/routes/product'));
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/cart', require('./src/routes/cart'));
+app.use('/api/order', require('./src/routes/order'));
 
 
 mongoose
