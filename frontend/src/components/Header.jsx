@@ -41,9 +41,9 @@ function Header() {
               <li>
                 Cart
               </li>
-              {/* <li>
+              <li>
                 <span onClick={handleLogout}>Logout</span>
-              </li>  */}
+              </li> 
             </>
 
           ) : (

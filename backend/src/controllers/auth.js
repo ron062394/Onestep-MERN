@@ -13,6 +13,7 @@ const registerUser = async (req, res) => {
     country,
     password,
   } = req.body;
+  console.log(req.body)
 
   try {
     // Check if email is already registered
@@ -34,7 +35,6 @@ const registerUser = async (req, res) => {
       country,
       password: hashedPassword,
     });
-
     await newUser.save();
 
     // Generate JWT token

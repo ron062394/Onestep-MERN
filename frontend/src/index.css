@@ -27,47 +27,6 @@ code {
 
 }
 
-.primary-btn {
-  background-color: #FFD702;
-  height: 45px;
-  width: 150px;
-  border-radius: 5px;
-  font-size: 18px;
-}
-
-
-.primary-btn:hover {
-  background-color: #204C38;
-  color: aliceblue;
-}
-
-.secondary-btn {
-  background-color: #204C38;
-  color: aliceblue;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  display: inline;
-  font-size: 18px;
-  padding: 15px 32px;
-  width: fit-content;
-  margin: auto;
-  cursor: pointer;
-  border: 1px #CBCBCB solid;
-}
-
-.tertiary-btn {
-  background-color: white ;
-  color: #204C38;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  display: inline;
-  font-size: 18px;
-  padding: 15px 32px;
-  width: fit-content;
-  margin: auto;
-  cursor: pointer;
-  border: 1px #CBCBCB solid;
-}
 
 .admin-container {
   display: flex;
@@ -124,6 +83,7 @@ code {
   justify-content: center;
   background-color: rgb(27, 27, 27);
   color: white;
+  font-size: 0.8rem;
 }
 
 .arrow path {

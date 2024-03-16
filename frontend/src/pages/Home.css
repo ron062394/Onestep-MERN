@@ -108,6 +108,7 @@
   justify-content: center;
   background-color: rgb(27, 27, 27);
   color: white;
+  font-size: 0.8rem;
 }
 
 .arrow path {
