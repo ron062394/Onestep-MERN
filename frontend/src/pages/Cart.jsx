@@ -83,7 +83,7 @@ function Cart() {
                   {item.product && <span>{item.product.product}</span>}
                 </div>
                 <div>
-                  <span>{item.product.size}</span> {/* Access the 'size' directly */}
+                  <span>{item.size}</span> {/* Access the 'size' directly */}
                 </div>
                 <div className="cart-item-qty">
                   <span className="increament-btn">+</span>
