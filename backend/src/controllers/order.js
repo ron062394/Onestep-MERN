@@ -146,14 +146,12 @@ const checkoutCart = async (req, res) => {
                     modifications.push(`Quantity updated for product ${product.product} - ${item.size}: ${sizeObj.quantity}`);
                 }
                 await cart.save();
+            } else {
+                // Reduce the stock of the product and update qtySold only if no modifications are made to the cart
+                sizeObj.quantity -= item.quantity;
+                product.qtySold += item.quantity;
+                await product.save();
             }
-
-
-
-            Reduce the stock of the product and update qtySold
-            sizeObj.quantity -= item.quantity;
-            product.qtySold += item.quantity;
-            await product.save();
         }
 
         // If modifications were made to the cart, inform the user and do not proceed with the order
