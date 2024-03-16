@@ -21,6 +21,11 @@ const checkoutSingleItem = async (req, res) => {
             return res.status(400).json({ message: `Size ${size} not found for product ${productId}` });
         }
 
+        // If requested quantity exceeds available stock, inform the user
+        if (quantity > sizeObj.quantity) {
+            return res.status(400).json({ message: `Requested quantity exceeds available stock for product ${product.product} - ${size}` });
+        }
+
         // If available stock is zero, inform the user that the item is no longer available
         if (sizeObj.quantity === 0) {
             return res.status(400).json({ message: `Product ${product.product} - ${size} is out of stock and is no longer available` });
