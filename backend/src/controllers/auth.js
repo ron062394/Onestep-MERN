@@ -7,10 +7,10 @@ const registerUser = async (req, res) => {
   const {
     firstName,
     lastName,
-    country,
     email,
     contactNumber,
     birthDay,
+    country,
     password,
   } = req.body;
   console.log(req.body)
