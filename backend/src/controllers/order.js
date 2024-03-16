@@ -4,7 +4,10 @@ const Product = require('../models/product');
 
 const checkoutSingleItem = async (req, res) => {
     try {
-        const { productId, size } = req.params;
+        const { user, products } = req.body;
+
+        // Extract product details from the request body
+        const { product: productId, quantity, size } = products[0];
 
         // Find the product by its ID
         const product = await Product.findById(productId);
@@ -24,16 +27,16 @@ const checkoutSingleItem = async (req, res) => {
         }
 
         // Reduce the stock of the product and update qtySold
-        sizeObj.quantity -= 1;
-        product.qtySold += 1;
+        sizeObj.quantity -= quantity;
+        product.qtySold += quantity;
         await product.save();
 
         // Proceed with creating the order
         const order = await Order.create({
-            user: req.user._id, // Assuming the user is authenticated and user ID is available in req.user
+            user: user,
             products: [{
                 product: productId,
-                quantity: 1, // Always 1 since we're checking out individual items
+                quantity: quantity,
                 size: size
             }],
             status: 'Pending'
