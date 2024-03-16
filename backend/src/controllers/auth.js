@@ -19,7 +19,9 @@ const registerUser = async (req, res) => {
     // Check if email is already registered
     const existingUser = await User.findOne({ email });
     if (existingUser) {
+      console.log()
       return res.status(400).json({ message: "Email already registered" });
+
     }
 
     // Hash the password
