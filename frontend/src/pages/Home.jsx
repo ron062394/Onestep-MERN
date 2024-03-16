@@ -16,7 +16,7 @@ function Home() {
             <p className="hero-subtext">
               Get ready for innovation and style that sets the pace.
             </p>
-            <button class="button">
+            <button className="button">
               <span class="text">Shop Now</span>
               <svg
                 class="arrow"
