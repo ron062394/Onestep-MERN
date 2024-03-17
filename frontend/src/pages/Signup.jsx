@@ -3,13 +3,16 @@ import './Signup.css';
 import { useSignup } from '../hooks/useSignup';
 import Background from '../components/Background';
 import DynamicButton from "../components/DynamicButton"; // Import the Button component
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
   const { signup, isLoading, error, handleInputChange, formData } = useSignup(); 
-  
+  const navigate = useNavigate();
+
   const handleSignup = async (e) => {
     e.preventDefault(); 
-    await signup(); 
+    await signup();
+      navigate('/login');
   };
 
   return (
