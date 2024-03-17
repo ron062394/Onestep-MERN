@@ -19,27 +19,34 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 2rem;
   height: 100%;
+  margin-top: 10rem;
 }
 
-.signup-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
 
 
 
 .signup-card input{
-  border: 1px solid rgb(212, 212, 212);
-  background: white; 
-  width: 86%;
-  height: 2rem;
+  border: 1px solid rgb(255, 215, 2);
+  background: white;
+  width: 30vw;
+  height: 1.6rem;
   margin-top: 0.5rem;
   border-radius: 5px;
   color: rgb(0, 0, 0);
   font-size: 1rem;
   margin: auto;
+  display: block;
 }
 
 .signup-text {
   margin-bottom: 1rem;
+}
+
+.signup-card label {
+  color: #ffd702;
+  font-size: 0.7rem;
+}
+
+.signup-card button {
+  margin-top: 1rem;
 }

@@ -16,56 +16,63 @@ function Signup() {
       <Background/>
       <div className="signup-container">
         <div className="signup-card">
-          <span className='signup-text'>Sign up an account</span>
+          <span className='signup-text'>Create your account</span>
           <form onSubmit={handleSignup}>
+            <label>First Name</label>
             <input
               type="text"
               name="firstName"
-              placeholder="First Name"
+              placeholder="Enter your first name"
               value={formData.firstName}
               onChange={handleInputChange}
               required
             />
+            <label>Last Name</label>
             <input
               type="text"
               name="lastName"
-              placeholder="Last Name"
+              placeholder="Enter your last name"
               value={formData.lastName}
               onChange={handleInputChange}
               required
             />
+            <label>Email Address</label>            
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               value={formData.email}
               onChange={handleInputChange}
               required
             />
+            <label>Contact Number</label>
             <input
               type="number"
               name="contactNumber"
-              placeholder="Contact Number"
+              placeholder="Enter your contact number"
               value={formData.contactNumber}
               onChange={handleInputChange}
               required
             />
+            <label>Birthday</label>
             <input
               type="date"
               name="birthDay"
-              placeholder="Birth Day"
+              placeholder="Enter your birthday"
               value={formData.birthDay}
               onChange={handleInputChange}
               required
             />
+            <label>Country</label>
             <input
               type="text"
               name="country"
-              placeholder="Country"
+              placeholder="Enter your country"
               value={formData.country}
               onChange={handleInputChange}
               required
             />
+            <label>Password</label>
             <input
               type="password"
               name="password"
