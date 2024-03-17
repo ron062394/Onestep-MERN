@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import ProductList from "../components/ProductList";
 import "./ProductView.css";
 import Loading from "../components/Loading";
+import Button from "../components/Button"; // Import the Button component
 
 function ProductView() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ function ProductView() {
   const { user } = useAuthContext();
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
-  const [loading, setLoading] = useState(true); // State to track loading status
+  const [loading, setLoading] = useState(true);
   const [mainImage, setMainImage] = useState("");
   const navigate = useNavigate();
 
@@ -21,21 +22,18 @@ function ProductView() {
     fetch(`https://onestep-api.vercel.app/api/product/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        // Calculate total stocks based on sizes
         const totalStocks = data.sizes.reduce(
           (acc, size) => acc + size.quantity,
           0
         );
-        // Merge the calculated total stocks into the product data
         const updatedProduct = { ...data, stocks: totalStocks };
         setProduct(updatedProduct);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false);
       })
       .catch((error) => console.error(error));
   }, [id]);
 
   const handleAddToCart = async () => {
-    // Check if a size has been selected
     if (!selectedSize) {
       alert("Please select a size");
       return;
@@ -45,13 +43,13 @@ function ProductView() {
       products: [
         {
           product: id,
-          size: selectedSize, // Include the selected size
+          size: selectedSize,
           quantity: quantity,
         },
       ],
     };
 
-    const response = await fetch("https://onestep-api.vercel.app/api/cart" , {
+    const response = await fetch("https://onestep-api.vercel.app/api/cart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,11 +66,9 @@ function ProductView() {
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
-    // Find the selected size object
     const selectedSizeObj = product.sizes.find(
       (sizeObj) => sizeObj.size === size
     );
-    // Update the product data with the new stock information
     const updatedProduct = { ...product, stocks: selectedSizeObj.quantity };
     setProduct(updatedProduct);
     setQuantity(1);
@@ -163,39 +159,10 @@ function ProductView() {
                     onChange={(e) => setQuantity(e.target.value)}
                     max={product.stocks}
                     className="purchase-qty"
-                    disabled={!selectedSize} // Disable the input if no size is selected
+                    disabled={!selectedSize}
                   />
-                <button class="button"
-                  onClick={handleAddToCart}
-                >
-                  <span class="text">Add to Cart</span>
-                  <svg
-                    class="arrow"
-                    viewBox="0 0 448 512"
-                    height="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                  </svg>
-                </button>
-
-                    <Link
-                      to={`/checkout/${product._id}`}
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <button class="button"
-                      >
-                        <span class="text">Checkout</span>
-                        <svg
-                          class="arrow"
-                          viewBox="0 0 448 512"
-                          height="1em"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
-                        </svg>
-                      </button>
-                    </Link>
+                  <Button onClick={handleAddToCart}>Add to Cart</Button> {/* Use the Button component */}
+                  <Button onClick={() => navigate(`/checkout/${product._id}`)}>Checkout</Button> {/* Use the Button component */}
                 </div>
               </div>
             </div>
