@@ -1,10 +1,27 @@
 
 .signup-section {
-  margin: 40px 140px;
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
-  height: 60vh;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.signup-section > span:nth-child(2) {
+  font-size: 0.7rem;
+}
+
+.signup-section > span:nth-child(3) {
+  margin-top: 0;
+  padding-top: 0;
+  color: #ffd702;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.signup-section > span:nth-child(4) {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -17,8 +34,6 @@
   background-color: rgba(189, 189, 189, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 2rem;
-  height: 100%;
-  margin-top: 10rem;
 }
 
 
@@ -38,9 +53,6 @@
   padding-left: 0.5rem;
 }
 
-.signup-text {
-  margin-bottom: 1rem;
-}
 
 .signup-card label {
   color: #ffd702;
