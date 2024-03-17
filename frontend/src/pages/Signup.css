@@ -33,9 +33,10 @@
   margin-top: 0.5rem;
   border-radius: 5px;
   color: rgb(0, 0, 0);
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin: auto;
   display: block;
+  padding-left: 0.5rem;
 }
 
 .signup-text {
@@ -47,6 +48,13 @@
   font-size: 0.7rem;
 }
 
-.signup-card button {
+.signup-card div {
   margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-link {
+  font-size: 0.8rem;
 }
