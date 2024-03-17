@@ -7,18 +7,12 @@
   }
 
 
-.login-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
 .login-card {
     display: flex;
     flex-direction: column;
     backdrop-filter:  saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(189, 189, 189, 0.10);
-    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     padding: 2rem;
     height: 100%;
@@ -26,18 +20,35 @@
 
 
 .login-card input{
-    border: 1px solid rgb(212, 212, 212);
-    background: white; 
-    width: 86%;
-    height: 2rem;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    margin: auto;
+  border: 1px solid rgb(255, 215, 2);
+  background: white;
+  width: 27vw;
+  height: 1.6rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
+  margin: auto;
+  display: block;
+  padding-left: 0.5rem;
 }
   
 .login-text {
   margin-bottom: 1rem;
 }
 
+.login-card label {
+  color: #ffd702;
+  font-size: 0.7rem;
+}
+
+.login-card div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.signup-link {
+  font-size: 0.7rem;
+}
