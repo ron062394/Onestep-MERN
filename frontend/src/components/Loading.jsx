@@ -4,7 +4,7 @@ import './Loading.css'
 function Loading() {
   return (
     <span className='loader'>
-            <div class="custom-loader"></div>
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </span>
   );
 }
