@@ -28,6 +28,10 @@ function Login() {
   return (
     <div className="login-section">
       <Background/>
+      <div className="welcome-back-tagline">
+        <h2>Welcome Back to Onestep!</h2>
+        <p>We're thrilled to see you again. Let's find your perfect pair of shoes!</p>
+      </div>
       <div className="login-container">
         {/* <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" /> */}
         <div className="login-card">
@@ -66,10 +70,12 @@ function Login() {
               </button>
               <span className="signup-link">Don't have an account yet? Click here</span>
             </div>
+
           </form>
           {error && <p className="error-message">{error}</p>}
         </div> 
       </div>
+
     </div>
 
 

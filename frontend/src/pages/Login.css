@@ -3,9 +3,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    flex-direction: column;
   }
 
+.welcome-back-tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-back-tagline p {
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+}
+.welcome-back-tagline h2 {
+  margin-bottom: 0.1rem;
+  font-size: 2.2rem;
+  color: #ffd702;
+}
 
 .login-card {
     display: flex;
