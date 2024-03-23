@@ -29,7 +29,7 @@
     display: flex;
     overflow-x: auto;
     padding: 0.1rem;
-    width: 50rem;
+    width: 100%;
     background-color: #28312d;
   }
   
