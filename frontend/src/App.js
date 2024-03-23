@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -13,25 +14,11 @@ import Dashboard from "./pages/admin/Dashboard";
 import AdminHeader from "./pages/admin/AdminHeader";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
-
 function App() {
   return (
     <div className="App">
-
-        {/* <div className="admin-section">
-          <Sidebar/>
-          <div>
-            <AdminHeader/>
-            <Routes>
-              <Route path="/admin" element={<Dashboard />} />
-            </Routes>
-
-          </div>
-        </div> */}
-
-      <div className="dark"></div>
       <Router>
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductView />} />
@@ -42,7 +29,7 @@ function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/about-us" element={<About />} />
         </Routes>
-        {/* <Footer/> */}
+        <Footer />
       </Router>
     </div>
   );

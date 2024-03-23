@@ -1,7 +1,10 @@
 .view-product-component {
     color: black;
-  }
-  
+}
+
+.view-product {
+  background-color: #d7d7d7;
+}
   .view-product-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

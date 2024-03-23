@@ -7,6 +7,7 @@ import "./ProductView.css";
 import Loading from "../components/Loading";
 import Button from "../components/Button"; // Import the Button component
 import Category from "../components/Category";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 function ProductView() {
   const { id } = useParams();
@@ -89,6 +90,7 @@ function ProductView() {
       ) : (
         product && (
           <div className="view-product">
+            <Breadcrumbs/>
             <div className="view-product-container">
               <div className="img-container shadow">
                 <img
