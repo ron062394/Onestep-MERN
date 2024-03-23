@@ -1,0 +1,15 @@
+.header-category {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-category span {
+    margin: 1rem;
+}
+
+.header-category span:hover {
+    cursor: pointer;
+    color: #FFD702;
+}

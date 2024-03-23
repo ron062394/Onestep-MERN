@@ -2,7 +2,7 @@ import React from "react";
 import './Category.css'
 function Category() {
     return(
-        <div>
+        <div className="header-category">
             <span>Mens</span>
             <span>Women</span>
             <span>Sports</span>
