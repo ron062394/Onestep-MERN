@@ -21,10 +21,10 @@ function Checkout() {
           <div>Order Complete</div>
         </div>
         <div className="check-out-container">
-          <div>
+          <div className="address-container">
             <div>Delivery Address</div>
-            <div   className="address-container">
-              <div>
+            <div   className="address-card-container">
+              <div className="address-card">
                 <span>
                   <div>
                     <span>John Doe</span>
@@ -34,7 +34,7 @@ function Checkout() {
                   <div>Contact</div>
                 </span>
               </div>
-              <div>
+              <div className="address-card">
                 <span>
                   <div>
                     <span>John Doe</span>
@@ -44,7 +44,7 @@ function Checkout() {
                   <div>Contact</div>
                 </span>
               </div>
-              <div>
+              <div className="address-card">
                 <span>
                   <div>
                     <span>John Doe</span>
@@ -57,11 +57,9 @@ function Checkout() {
 
             </div>
 
-
-
             <hr/>
-          <div>SELECT PAYMENT METHOD</div>
-            <div>
+          <div className="payment-container">SELECT PAYMENT METHOD</div>
+            <div className="payment-method-container">
               <span>Credit Card</span>
               <span>Paypal</span>
               <span>COD</span>

@@ -6,26 +6,36 @@
 .check-out-container {
     display: grid;
     grid-template-columns: 60% 40%;
-}
-
-
-.address-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
 }
 
+.address-container {
+    margin-bottom: 1rem;
+}
+
+
+.address-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.address-container .address-card {
+    border: 1px solid #B6B6B6 ;
+    padding: 0.5rem;
+}
 
   .timeline {
     display: flex;
     align-items: center;
     width: 50vw;
-    margin: auto;
+    margin: 1rem auto;
   }
   .delivery-timeline {
     display: flex;
     width: 55vw;
-    margin: auto;
+    margin: 1rem auto;
     align-items: center;
     justify-content: space-between;
     }
@@ -54,3 +64,20 @@
   .line.done {
     background-color: #8AE09D;
   }
+.payment-method-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.payment-method-container span{
+    border: 1px solid #B6B6B6 ;
+    padding: 0.5rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+
+.payment-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
