@@ -71,7 +71,7 @@ function ProductList() {
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <button className="cart-btn">
-                    <span class="text">View Product</span>
+                    <span class="text">Buy Now</span>
                     <svg
                       class="arrow"
                       viewBox="0 0 448 512"

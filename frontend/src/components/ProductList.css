@@ -79,11 +79,14 @@
     background-color: #204c38;
     background-color: white;
     border: 1px solid #f4f4f4;
+    transition: transform 0.3s ease;
   }
   
   .product-card:hover {
     border: 1px solid #ffd702;
     cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
   
   .product-card-price {

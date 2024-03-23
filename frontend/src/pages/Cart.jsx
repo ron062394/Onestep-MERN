@@ -91,7 +91,7 @@ function Cart() {
                   <span className="decreament-btn">-</span>
                 </div>
                 <div>
-                  <span>x</span>
+                  <span className="remove-btn">x</span>
                 </div>
                 <div>
                   <span>
