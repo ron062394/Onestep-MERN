@@ -6,6 +6,7 @@ import ProductList from "../components/ProductList";
 import "./ProductView.css";
 import Loading from "../components/Loading";
 import Button from "../components/Button"; // Import the Button component
+import Category from "../components/Category";
 
 function ProductView() {
   const { id } = useParams();
@@ -80,6 +81,7 @@ function ProductView() {
 
   return (
     <div className="view-product-component">
+      <Category/>
       {loading ? (
         <div className="loading-container">
           <Loading />
