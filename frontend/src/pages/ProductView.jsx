@@ -100,11 +100,11 @@ function ProductView() {
               </div>
 
               <div className="product-info-container shadow">
-                <h3>{product.product}</h3>
+                <span>{product.product}</span>
                 <div>
                   <span>Sizes: </span>
                   {product.sizes.map((sizeObj, index) => (
-                    <label key={index}>
+                    <label className="label" key={index}>
                       <input
                         type="radio"
                         name="size"
@@ -117,21 +117,18 @@ function ProductView() {
                   ))}
                 </div>
 
-                <div className="emphasized">${product.price}</div>
+
                 <div className="rate-info">
+                  <span className="emphasized price">${product.price}.00</span>
                   <span>
-                    <img
-                      className="product-star"
-                      src="https://i.imgur.com/XsLLxLD.png"
-                      alt="rate-star"
-                    />
+                    Ratings:
                     {product.ratings !== 0
                       ? (product.totalRatings / product.ratings).toFixed(2)
                       : 0}
                   </span>
 
                   <span>|</span>
-                  <span>Ratings: {product.ratings}</span>
+                  <span>Total Ratings: {product.ratings}</span>
                   <span>|</span>
                   <span>Sold: {product.qtySold}</span>
                   <span>|</span>
