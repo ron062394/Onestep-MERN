@@ -60,18 +60,21 @@ function Checkout() {
             <hr/>
           <div className="payment-container">SELECT PAYMENT METHOD</div>
             <div className="payment-method-container">
-              <span>Credit Card</span>
+              <span className="selected-payment">Credit Card</span>
               <span>Paypal</span>
               <span>COD</span>
             </div>
 
             <div>Name On Card</div>
-            <input type="text" placeholder="Your Card Number"/>
-            <div>Card Number</div>
-            <input type="number" placeholder="0000-0000-0000-0000"/>
+            <div className="card-input-container">
+              <input type="text" placeholder="Your Card Number"/>
+              <div>Card Number</div>
+              <input type="number" placeholder="0000-0000-0000-0000"/>
+            </div>
+
           </div>
-          <div>
-            <div>Order Suummary</div>
+          <div className="order-summary-container">
+            <div>Order Summary</div>
             <div>
               <span>Merchandise Total Quantity:</span>
               <span>$534.00</span>

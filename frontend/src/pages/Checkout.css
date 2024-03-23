@@ -81,3 +81,19 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.selected-payment {
+    background-color: #53A5F1;
+    color: white;
+}
+
+.order-summary-container {
+    border: 1px solid #B6B6B6 ;
+
+}
+
+.card-input-container input {
+    height: 2rem;  
+    width: 70%;
+    font-size: 1.25rem;
+}
