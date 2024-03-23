@@ -183,6 +183,10 @@ function ProductView() {
                   <div>{product.brand}</div>
                 </div>
                 <div className="spec">
+                  <div>Category</div>
+                  <div>{product.categories}</div>
+                </div>
+                <div className="spec">
                   <div>Collection</div>
                   <div>{product.collection}</div>
                 </div>
