@@ -118,7 +118,7 @@
     left: 0;
     width: 100%;
     text-align: center;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.05s ease;
     opacity: 0;
   }
   
