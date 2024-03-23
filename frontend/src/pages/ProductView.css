@@ -15,16 +15,13 @@
   
   .img-container {
     background-color: rgb(255, 255, 255);
-    width: 100%;
     height: 60vh;
-    display: grid;
-    place-items: center;
     border: #dfdfdf solid 1px;
   }
   
   .img-container img {
+    height: 100%;
     width: 100%;
-    height: 50vh;
     object-fit: cover;
   }
   
@@ -33,7 +30,7 @@
     overflow-x: auto;
     padding: 1rem;
     width: 600px; /* Adjust the width as needed */
-    background-color: #555;
+    background-color: #28312d;
   }
   
   .img-preview-container div {
@@ -54,7 +51,7 @@
   
   .product-info-container {
     background-color: rgb(255, 255, 255);
-
+    border: #dfdfdf solid 1px;
     height: 60vh;
   }
   
@@ -75,6 +72,7 @@
     margin-top: 1rem;
     padding: 2rem;
     margin: 10px 140px;
+    border: #dfdfdf solid 1px;
   }
   
   .spec-text-container {
