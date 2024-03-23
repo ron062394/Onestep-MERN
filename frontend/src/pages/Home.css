@@ -139,8 +139,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 60vh 30vh;
-  width: 100vw;
-  
+  width: 100vw;  
 }
 .category-items {
   background-color: aliceblue;

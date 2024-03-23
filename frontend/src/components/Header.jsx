@@ -37,7 +37,7 @@ function Header() {
               <li>
                 <span>Hi {user.firstName}</span>
               </li>
-              <span className="vertical-line">|</span>
+              {/* <span className="vertical-line">|</span> */}
               <li>
                 Cart
               </li>

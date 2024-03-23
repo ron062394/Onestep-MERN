@@ -1,9 +1,10 @@
 .login-section {
-    margin: 40px 140px;
+    margin: 10px 140px 60px 140px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 65vh;
   }
 
 .welcome-back-tagline {
@@ -17,7 +18,7 @@
   margin-bottom: 1rem;
 }
 .welcome-back-tagline h2 {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
   font-size: 2.2rem;
   color: #ffd702;
 }
@@ -30,7 +31,7 @@
     background-color: rgba(189, 189, 189, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.125);
     padding: 2rem;
-    height: 100%;
+
 }
 
 
@@ -46,6 +47,7 @@
   margin: auto;
   display: block;
   padding-left: 0.5rem;
+  margin-bottom: 1rem;
 }
   
 .login-text {
@@ -58,7 +60,7 @@
 }
 
 .login-card div {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
