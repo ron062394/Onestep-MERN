@@ -8,8 +8,8 @@
 }
   .view-product-container {
     display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 1rem;
+    grid-template-columns: 33% 66%;
+    gap: 1%;
     padding: 10px 140px;
   }
   
