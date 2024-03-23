@@ -37,9 +37,9 @@ code {
 
 /* Typography */
 .shadow {
-  box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
-  -webkit-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
-  -moz-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.25);
+  box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 10px 5px -6px rgba(0,0,0,0.15);
 }
 .emphasized {
   font-weight: bold;

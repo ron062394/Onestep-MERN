@@ -121,7 +121,7 @@ function ProductView() {
                 <div className="rate-info">
                   <span className="emphasized price">${product.price}.00</span>
                   <span>
-                    Ratings:
+                    Ratings: {" "}
                     {product.ratings !== 0
                       ? (product.totalRatings / product.ratings).toFixed(2)
                       : 0}
