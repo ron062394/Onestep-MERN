@@ -1,0 +1,56 @@
+.checkout-section {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 10px 140px;
+}
+.check-out-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+
+.address-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+
+  .timeline {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    margin: auto;
+  }
+  .delivery-timeline {
+    display: flex;
+    width: 55vw;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    }
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .circle.done {
+    background-color: #8AE09D;
+  }
+  
+  .line {
+    height: 2px;
+    background-color: gray;
+    flex: 1;
+  }
+  
+
+  .line.done {
+    background-color: #8AE09D;
+  }
