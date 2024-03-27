@@ -127,7 +127,6 @@ function Cart() {
         </div>
       )}
       <div className="other-section">
-        <h3>You might like</h3>
         <ProductList />
       </div>
     </div>

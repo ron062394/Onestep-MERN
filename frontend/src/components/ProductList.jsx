@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
-
+import Loading from "./Loading";
 import "./ProductList.css";
 
 function ProductList() {
