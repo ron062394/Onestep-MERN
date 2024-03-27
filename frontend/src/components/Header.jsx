@@ -39,7 +39,9 @@ function Header() {
               </li>
               {/* <span className="vertical-line">|</span> */}
               <li>
-                Cart
+                <NavLink className="no-text-decoration" to="/cart" activeClassName="active">
+                    Cart
+                  </NavLink>
               </li>
               <li>
                 <span onClick={handleLogout}>Logout</span>
