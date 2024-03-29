@@ -44,6 +44,15 @@ export const CartProvider = ({ children }) => {
     fetchCartData();
   }, [user]);
 
+  // Update local storage whenever cart data changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]); // Run this effect whenever cart data changes
+
+  const updateCart = (newCart) => {
+    setCart(newCart);
+  };
+
   const incrementQuantity = async (productId, size) => {
     try {
       const response = await fetch(`https://onestep-api.vercel.app/api/cart/increment/${productId}/${size}`, {
@@ -62,7 +71,7 @@ export const CartProvider = ({ children }) => {
       console.error("Error incrementing quantity:", error);
     }
   };
-  
+
   const decrementQuantity = async (productId, size) => {
     try {
       const response = await fetch(`https://onestep-api.vercel.app/api/cart/decrement/${productId}/${size}`, {
@@ -81,10 +90,9 @@ export const CartProvider = ({ children }) => {
       console.error("Error decrementing quantity:", error);
     }
   };
-  
 
   return (
-    <CartContext.Provider value={{ cart, loading, incrementQuantity, decrementQuantity }}>
+    <CartContext.Provider value={{ cart, loading, updateCart, incrementQuantity, decrementQuantity }}>
       {children}
     </CartContext.Provider>
   );
