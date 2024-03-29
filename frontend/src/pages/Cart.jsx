@@ -1,11 +1,26 @@
-// Inside the Cart component
+import React, { useEffect } from "react";
 import Loading from "../components/Loading";
 import ProductList from "../components/ProductList";
 import { useCart } from "../context/CartContext"; // Import the useCart hook
-import './Cart.css'
+import "./Cart.css";
 
 function Cart() {
-  const { cart, loading, incrementQuantity, decrementQuantity } = useCart(); // Use the useCart hook to access cart data and functions
+  const { cart, loading, incrementQuantity, decrementQuantity, updateCart } = useCart(); // Use the useCart hook to access cart data and functions
+
+  // Load cart data from local storage on component mount
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart && cart.length === 0) {
+      // Convert JSON string to JavaScript object and set cart context
+      updateCart(JSON.parse(storedCart));
+    }
+  }, []); // Run this effect only once, on component mount
+
+  // Update local storage whenever cart data changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log(cart)
+  }, [cart]); // Run this effect whenever cart data changes
 
   return (
     <div className="cart-section">
