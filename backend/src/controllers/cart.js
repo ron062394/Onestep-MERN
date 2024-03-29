@@ -98,11 +98,46 @@ const incrementCartItem = async (req, res) => {
     }
 };
 
+const decrementCartItem = async (req, res) => {
+    try {
+        const { productId, size } = req.params;
+
+        let cart = await Cart.findOne({ user: req.user._id });
+        if (!cart) {
+            return res.status(404).json({ message: 'Cart not found' });
+        }
+
+        const productIndex = cart.products.findIndex(item => 
+            item.product.toString() === productId && item.size === size
+        );
+        if (productIndex === -1) {
+            return res.status(404).json({ message: 'Product not found in cart' });
+        }
+
+        // If the quantity is 1, remove the item from the cart
+        if (cart.products[productIndex].quantity === 1) {
+            cart.products.splice(productIndex, 1);
+        } else {
+            // Decrement the quantity by 1, ensuring it doesn't go below 1
+            cart.products[productIndex].quantity--;
+        }
+
+        // Save the cart
+        await cart.save();
+
+        // Respond with the updated cart
+        res.json(cart);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
 
 
 module.exports = {
     addToCart,
     getCart,
     removeFromCart,
-    incrementCartItem
+    incrementCartItem,
+    decrementCartItem
 };
