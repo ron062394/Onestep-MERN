@@ -1,6 +1,5 @@
 const Cart = require('../models/cart.js');
 
-// Add a product to the cart
 const addToCart = async (req, res) => {
     try {
         const { products } = req.body;
@@ -37,6 +36,7 @@ const addToCart = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
 
 
 
