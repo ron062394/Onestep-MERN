@@ -7,6 +7,7 @@ const {
     getCart,
     removeFromCart,
     incrementCartItem,
+    decrementCartItem,
 } = require('../controllers/cart')
 
 
@@ -14,6 +15,7 @@ router.post('/',authMiddleware, addToCart);
 router.get('/', authMiddleware, getCart);
 router.put('/:productId',authMiddleware, removeFromCart);
 router.put('/:productId/:size',authMiddleware, incrementCartItem);
+router.put('/:productId/:size',authMiddleware, decrementCartItem);
 
 
 module.exports = router;
