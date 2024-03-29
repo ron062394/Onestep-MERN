@@ -1,59 +1,15 @@
-import ProductList from "../components/ProductList";
-import { useState, useEffect } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
+// Inside the Cart component
 import Loading from "../components/Loading";
-import "./Cart.css";
+import ProductList from "../components/ProductList";
+import { useCart } from "../context/CartContext"; // Import the useCart hook
+import './Cart.css'
 
 function Cart() {
-  const [cart, setCart] = useState([]); // Initialize cart state as an empty array
-  const [loading, setLoading] = useState(true); // Initialize loading state as true
-  const { user } = useAuthContext();
-
-  useEffect(() => {
-    const fetchCartData = async () => {
-      try {
-        if (!user || !user.token) {
-          console.error("User or token is null");
-          return;
-        }
-
-        const response = await fetch("https://onestep-api.vercel.app/api/cart", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
-        if (!response.ok) {
-          throw new Error("Failed to fetch cart data");
-        }
-        const cartData = await response.json();
-
-        // Check if cartData is an object and contains a 'products' array
-        if (typeof cartData === "object" && Array.isArray(cartData.products)) {
-          setCart(cartData.products); // Set the products array as the cart state
-        } else {
-          console.error("Invalid cart data format");
-        }
-      } catch (error) {
-        console.error("Error fetching cart data:", error);
-      } finally {
-        setLoading(false); // Set loading state to false after fetching data
-      }
-    };
-
-    fetchCartData();
-  }, [user]);
-
-  useEffect(() => {
-    console.log(cart); // Log the updated value of cart
-  }, [cart]);
-
-  console.log("Cart state:", cart); // Log the cart state outside JSX
+  const { cart, loading, incrementQuantity, decrementQuantity } = useCart(); // Use the useCart hook to access cart data and functions
 
   return (
     <div className="cart-section">
-      {loading ? ( // Conditionally render loading indicator
+      {loading ? (
         <div className="loading-container">
           <Loading />
         </div>
@@ -73,7 +29,6 @@ function Cart() {
               <span>Remove</span>
               <span>Price</span>
             </div>
-            {/* Check if cart is an array before using map */}
             {Array.isArray(cart) &&
               cart.map((item) => (
                 <div key={item._id} className="cart-content-container">
@@ -83,19 +38,33 @@ function Cart() {
                       item.product.images[0] && (
                         <img
                           className="cart-product-img"
-                          src={item.product.images[0]} // Access the first image
+                          src={item.product.images[0]}
                           alt="product-img"
                         />
                       )}
                     {item.product && <span>{item.product.product}</span>}
                   </div>
                   <div>
-                    <span>{item.size}</span> {/* Access the 'size' directly */}
+                    <span>{item.size}</span>
                   </div>
                   <div className="cart-item-qty">
-                    <span className="incrment-btn">+</span>
+                    <span
+                      className="increment-btn"
+                      onClick={() =>
+                        incrementQuantity(item.product._id, item.size)
+                      }
+                    >
+                      +
+                    </span>
                     <span>{item.quantity}</span>
-                    <span className="decrament-btn">-</span>
+                    <span
+                      className="decrement-btn"
+                      onClick={() =>
+                        decrementQuantity(item.product._id, item.size)
+                      }
+                    >
+                      -
+                    </span>
                   </div>
                   <div>
                     <span className="remove-btn">x</span>
@@ -108,7 +77,6 @@ function Cart() {
                 </div>
               ))}
             <div className="total-container">
-              {/* Calculate total quantity and price here */}
               <span>
                 Quantity: {cart.reduce((total, item) => total + item.quantity, 0)}
               </span>
