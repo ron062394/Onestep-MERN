@@ -14,8 +14,8 @@ const {
 router.post('/',authMiddleware, addToCart);
 router.get('/', authMiddleware, getCart);
 router.put('/:productId',authMiddleware, removeFromCart);
-router.put('/:productId/:size',authMiddleware, incrementCartItem);
-router.put('/:productId/:size',authMiddleware, decrementCartItem);
+router.put('/increment/:productId/:size',authMiddleware, incrementCartItem);
+router.put('/decrement/:productId/:size',authMiddleware, decrementCartItem);
 
 
 module.exports = router;
