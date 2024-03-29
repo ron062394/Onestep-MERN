@@ -15,7 +15,7 @@ export const CartProvider = ({ children }) => {
           console.error("User or token is null");
           return;
         }
-
+  
         const response = await fetch("https://onestep-api.vercel.app/api/cart", {
           method: "GET",
           headers: {
@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
           throw new Error("Failed to fetch cart data");
         }
         const cartData = await response.json();
-
+  
         // Check if cartData is an object and contains a 'products' array
         if (typeof cartData === "object" && Array.isArray(cartData.products)) {
           setCart(cartData.products); // Set the products array as the cart state
@@ -40,9 +40,10 @@ export const CartProvider = ({ children }) => {
         setLoading(false); // Set loading state to false after fetching data
       }
     };
-
+  
     fetchCartData();
-  }, [user]);
+  }, [user, cart]); // Add cart as a dependency to refetch data when cart changes
+  
 
   // Update local storage whenever cart data changes
   useEffect(() => {
