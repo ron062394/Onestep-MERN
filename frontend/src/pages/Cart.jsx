@@ -93,9 +93,9 @@ function Cart() {
                     <span>{item.size}</span> {/* Access the 'size' directly */}
                   </div>
                   <div className="cart-item-qty">
-                    <span className="increament-btn">+</span>
+                    <span className="incrment-btn">+</span>
                     <span>{item.quantity}</span>
-                    <span className="decreament-btn">-</span>
+                    <span className="decrament-btn">-</span>
                   </div>
                   <div>
                     <span className="remove-btn">x</span>

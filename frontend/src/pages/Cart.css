@@ -50,12 +50,12 @@
     text-align: center;
 }
 
-.increament-btn {
+.increment-btn {
     background-color: #22002E;
     color: #f3f3f3;
 }
 
-.increament-btn:hover {
+.increment-btn:hover {
     cursor: pointer;
     
 }
@@ -70,11 +70,11 @@
     background-color: #ffffff;
 }
 
-.decreament-btn {
+.decrement-btn {
     background-color: #f4f4f4;
 }
 
-.decreament-btn:hover {
+.decrement-btn:hover {
     cursor: pointer;
 
 }
