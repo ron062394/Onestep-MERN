@@ -18,7 +18,7 @@ const addToCart = async (req, res) => {
 
                 if (existingProductIndex !== -1) {
                     // If product with the same ID and size is already in the cart, update its quantity
-                    cart.products[existingProductIndex].quantity += quantity;
+                    cart.products[existingProductIndex].quantity += parseInt(quantity);
                 } else {
                     // If product is not in the cart, add it
                     cart.products.push({ product, size, quantity });
@@ -36,6 +36,7 @@ const addToCart = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
 
 
 
