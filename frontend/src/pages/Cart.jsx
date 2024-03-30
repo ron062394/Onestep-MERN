@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Loading from "../components/Loading";
-import ProductList from "../components/ProductList";
+import Loading from "../components/common/Loading";
+import ProductList from "../components/product/ProductList";
 import { useCart } from "../context/CartContext"; // Import the useCart hook
 import "./Cart.css";
 
