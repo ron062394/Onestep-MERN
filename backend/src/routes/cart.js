@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 const {
     addToCart,
     getCart,
-    removeFromCart,
+    removeCartItem,
     incrementCartItem,
     decrementCartItem,
 } = require('../controllers/cart')
@@ -13,7 +13,7 @@ const {
 
 router.post('/',authMiddleware, addToCart);
 router.get('/', authMiddleware, getCart);
-router.put('/:productId',authMiddleware, removeFromCart);
+router.put('/remove/:productId/:size',authMiddleware, removeCartItem);
 router.put('/increment/:productId/:size',authMiddleware, incrementCartItem);
 router.put('/decrement/:productId/:size',authMiddleware, decrementCartItem);
 
