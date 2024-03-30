@@ -98,7 +98,7 @@ function Cart() {
 
             <div className="total-container">
               <span>
-                Quantity: {cart.reduce((total, item) => total + item.quantity, 0)}
+                Total Items: {cart.reduce((total, item) => total + item.quantity, 0)}
               </span>
               <span>
                 Total:{" "}$
