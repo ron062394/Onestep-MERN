@@ -1,8 +1,8 @@
 import React from 'react';
 import './Signup.css';
 import { useSignup } from '../hooks/useSignup';
-import Background from '../components/Background';
-import DynamicButton from "../components/DynamicButton"; // Import the Button component
+import Background from '../components/background/Background';
+import DynamicButton from "../components/dynamic/DynamicButton"; // Import the Button component
 import { useNavigate } from 'react-router-dom';
 
 function Signup() {

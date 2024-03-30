@@ -1,17 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import AdminLogin from "./pages/admin/AdminLogin";
 import ProductView from "./pages/ProductView";
 import Cart from "./pages/Cart";
-import Sidebar from "./pages/admin/Sidebar";
 import Dashboard from "./pages/admin/Dashboard";
-import AdminHeader from "./pages/admin/AdminHeader";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
 function App() {

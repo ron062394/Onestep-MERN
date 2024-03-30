@@ -1,6 +1,6 @@
 import "./Home.css";
-import ProductList from "../components/ProductList";
-import Background from "../components/Background";
+import ProductList from "../components/product/ProductList";
+import Background from "../components/background/Background";
 
 function Home() {
   return (

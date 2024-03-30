@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import Background from '../components/Background';
-import DynamicButton from "../components/DynamicButton"; // Import the Button component
+import Background from '../components/background/Background';
+import DynamicButton from "../components/dynamic/DynamicButton"; // Import the Button component
 
 function Login() {
   const [email, setEmail] = useState('');

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
-import ProductList from "../components/ProductList";
+import ProductList from "../components/product/ProductList";
 import "./ProductView.css";
-import Loading from "../components/Loading";
-import Button from "../components/Button"; // Import the Button component
-import Category from "../components/Category";
-import Breadcrumbs from "../components/Breadcrumbs";
+import Loading from "../components/common/Loading";
+import Button from "../components/common/Button"; // Import the Button component
+import Category from "../components/product/Category";
+import Breadcrumbs from "../components/common/Breadcrumbs";
 
 function ProductView() {
   const { id } = useParams();
