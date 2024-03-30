@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import Loading from "../components/common/Loading";
 import ProductList from "../components/product/ProductList";
 import { useCart } from "../context/CartContext"; // Import the useCart hook
+import Button from "../components/common/Button";
+import { useNavigate } from 'react-router-dom';
 import "./Cart.css";
 
 function Cart() {
   const { cart, loading, incrementQuantity, decrementQuantity, updateCart } = useCart(); // Use the useCart hook to access cart data and functions
-
+  const navigate = useNavigate();
+  
   // Load cart data from local storage on component mount
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -63,15 +66,7 @@ function Cart() {
                     <span>{item.size}</span>
                   </div>
                   <div className="cart-item-qty">
-                    <span
-                      className="increment-btn"
-                      onClick={() =>
-                        incrementQuantity(item.product._id, item.size)
-                      }
-                    >
-                      +
-                    </span>
-                    <span>{item.quantity}</span>
+
                     <span
                       className="decrement-btn"
                       onClick={() =>
@@ -79,6 +74,15 @@ function Cart() {
                       }
                     >
                       -
+                    </span>
+                    <span>{item.quantity}</span>
+                    <span
+                      className="increment-btn"
+                      onClick={() =>
+                        incrementQuantity(item.product._id, item.size)
+                      }
+                    >
+                      +
                     </span>
                   </div>
                   <div>
@@ -91,6 +95,7 @@ function Cart() {
                   </div>
                 </div>
               ))}
+
             <div className="total-container">
               <span>
                 Quantity: {cart.reduce((total, item) => total + item.quantity, 0)}
@@ -105,7 +110,9 @@ function Cart() {
                   .toFixed(2)}
               </span>
             </div>
-            <button className="secondary-btn">CHECK OUT</button>
+            <div className="btn-container">
+              <Button onClick={() => navigate(`/checkout`)}>Checkout</Button> {/* Use the Button component */}              
+            </div>
           </div>
         </div>
       )}

@@ -16,10 +16,14 @@
 .cart-content-header,.cart-content-container  {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px solid #e2e2e2;
     padding: 1rem;
 }
 
+.cart-content-header, .cart-content-container {
+    background-color: white;
+    margin-top: 0.5rem;
+}
 
 .cart-content-container div {
     display: flex;
@@ -79,14 +83,18 @@
 
 }
 
-.total-container {
+.total-container, .btn-container {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-start; /* Change align-items to flex-start */
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 0.5rem;
 }
 
 .total-container span {
-    border: 1px solid #b1b1b1;
-    padding: 1.5rem 3rem;
-    margin-left: 3rem;
-    margin-top: 1rem;
+    border: 1px solid #e2e2e2;
+    padding: 1rem 3rem;
+    margin-left: 1rem;
 }
