@@ -52,35 +52,21 @@ const getCart = async (req, res) => {
     }
 };
 
-const removeCartItem = async (req, res) => {
+const removeFromCart = async (req, res) => {
     try {
-        const { productId, size } = req.params;
+        const { productId } = req.params;
 
-        let cart = await Cart.findOne({ user: req.user._id });
+        const cart = await Cart.findOne({ user: req.user._id });
         if (!cart) {
             return res.status(404).json({ message: 'Cart not found' });
         }
-
-        const productIndex = cart.products.findIndex(item => 
-            item.product.toString() === productId && item.size === size
-        );
-        if (productIndex === -1) {
-            return res.status(404).json({ message: 'Product not found in cart' });
-        }
-
-        // Remove the item from the cart
-        cart.products.splice(productIndex, 1);
-
-        // Save the cart
+        cart.products = cart.products.filter(item => item.product.toString() !== productId);
         await cart.save();
-
-        // Respond with the updated cart
         res.json(cart);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
-
 
 
 const incrementCartItem = async (req, res) => {
@@ -151,7 +137,7 @@ const decrementCartItem = async (req, res) => {
 module.exports = {
     addToCart,
     getCart,
-    removeCartItem,
+    removeFromCart,
     incrementCartItem,
     decrementCartItem
 };
