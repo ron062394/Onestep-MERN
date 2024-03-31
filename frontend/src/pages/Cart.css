@@ -94,6 +94,7 @@
 }
 
 .btn-container {
+    align-items: center;
     background-color: #204C38;
 }
 
