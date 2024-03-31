@@ -95,21 +95,33 @@ function Cart() {
                   </div>
                 </div>
               ))}
+            <div className="total-card">
+              <div className="discount-container">
+                <span>Shipping Subtotal <span className="discount-price">P0.00</span></span>
+                <span>Shipping Discount <span className="discount-price">P0.00</span></span>
+                <span>Voucher Discount <span className="discount-price">P0.00</span></span>
+              </div>
+              <div className="total-container">
+                <h3>Cart Total</h3>
+                <span>
+                  <span>Total Qty</span>
+                  <span className="highlight-total">{cart.reduce((total, item) => total + item.quantity, 0)}</span>
+                </span>
+                <span>
+                  <span>Total Qty</span>
+                  <span  className="highlight-total">$
+                    {cart
+                        .reduce(
+                          (total, item) => total + item.quantity * item.product.price,
+                          0
+                        )
+                        .toFixed(2)}
 
-            <div className="total-container">
-              <span>
-                Total Items: {cart.reduce((total, item) => total + item.quantity, 0)}
-              </span>
-              <span>
-                Total:{" "}$
-                {cart
-                  .reduce(
-                    (total, item) => total + item.quantity * item.product.price,
-                    0
-                  )
-                  .toFixed(2)}
-              </span>
+                  </span>
+                </span>
+              </div>
             </div>
+
             <div className="btn-container">
               <Button onClick={() => navigate(`/checkout`)}>Checkout</Button> {/* Use the Button component */}              
             </div>
