@@ -1,19 +1,5 @@
 const mongoose = require('mongoose');
 
-const addressSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    address: {
-        type: String,
-        required: true,
-    },
-    contact: {
-        type: String,
-        required: true,
-    }
-});
 
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -44,7 +30,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    deliveryAddresses: [addressSchema] // Array of delivery addresses
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
