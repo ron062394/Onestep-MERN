@@ -15,11 +15,6 @@ function ProductList() {
       .catch((error) => console.error(error));
   }, []);
 
-  const getRandomImage = (images) => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    return images[randomIndex];
-  };
-
   return (
     <div className="product-list-section">
       <div className="card-container">
@@ -28,17 +23,6 @@ function ProductList() {
             <div className="product-card-content">
               <div className="product-uppertext">
                 <span className="new">NEW</span>
-                {/* <span className="product-rate">
-                  <img
-                    className="product-star"
-                    src="https://i.imgur.com/XsLLxLD.png"
-                    alt="rate-star"
-                  />
-                  {product.ratings !== 0
-                    ? (product.totalRatings / product.ratings).toFixed(2)
-                    : 0}
-                  <span>({product.ratings})</span>
-                </span> */}
               </div>
               <div className="product-img-container">
                 {product.images.length > 0 && (
@@ -46,12 +30,6 @@ function ProductList() {
                     className="product-card-img"
                     src={product.images[0]}
                     alt="product-img-preview"
-                    onMouseEnter={(e) => {
-                      e.currentTarget.src = getRandomImage(product.images);
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.src = product.images[0];
-                    }}
                   />
                 )}
               </div>
@@ -71,9 +49,9 @@ function ProductList() {
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <button className="cart-btn">
-                    <span class="text">Buy Now</span>
+                    <span className="text">Buy Now</span>
                     <svg
-                      class="arrow"
+                      className="arrow"
                       viewBox="0 0 448 512"
                       height="1em"
                       xmlns="http://www.w3.org/2000/svg"

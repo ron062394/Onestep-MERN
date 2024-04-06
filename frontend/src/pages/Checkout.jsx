@@ -64,13 +64,16 @@ function Checkout() {
               <span>Paypal</span>
               <span>COD</span>
             </div>
-
-            <div>Name On Card</div>
-            <div className="card-input-container">
-              <input type="text" placeholder="Your Card Number"/>
-              <div>Card Number</div>
-              <input type="number" placeholder="0000-0000-0000-0000"/>
+            <div className="cc-container">
+              <div className="card-input-container">
+                <div>Name On Card</div>
+                <input type="text" placeholder="Your Card Number"/>
+                <div>Card Number</div>
+                <input type="number" placeholder="0000-0000-0000-0000"/>
+              </div>
+              <img className="cc-img" src="https://www.shutterstock.com/image-photo/credit-card-on-png-background-600nw-2259495135.jpg" alt="" />
             </div>
+
 
           </div>
           <div className="order-summary-container">

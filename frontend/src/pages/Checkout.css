@@ -88,12 +88,23 @@
 }
 
 .order-summary-container {
-    border: 1px solid #B6B6B6 ;
+  border: 1px solid #B6B6B6 ;
 
 }
 
 .card-input-container input {
-    height: 2rem;  
-    width: 70%;
-    font-size: 1.25rem;
+  font-size: 1.25rem;
+}
+
+
+.cc-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #B6B6B6 ;
+  margin-top: 1rem;
+}
+
+
+.cc-img {
+  height: 200px;
 }
