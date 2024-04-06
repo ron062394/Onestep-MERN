@@ -90,7 +90,9 @@ function Cart() {
                     </span>
                   </div>
                   <div>
-                    <span className="remove-btn" onClick={() => handleRemoveItem(item.product._id, item.size)}>x</span>
+                    <span className="remove-btn material-symbols-outlined" onClick={() => handleRemoveItem(item.product._id, item.size)}>
+                      delete
+                    </span>
                   </div>
                   <div>
                     <span>
