@@ -1,5 +1,20 @@
 const mongoose = require('mongoose');
 
+const addressSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    address: {
+        type: String,
+        required: true,
+    },
+    contact: {
+        type: String,
+        required: true,
+    }
+});
+
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -14,11 +29,11 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     contactNumber: {
-        type: Number, // Capitalized "Number"
+        type: String, // Changed to string as contact numbers might contain non-numeric characters
         required: true,
     },
     birthDay: {
-        type: Date, // Capitalized "Date"
+        type: Date,
         required: true,
     },
     country: {
@@ -28,9 +43,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-    }
-}, { timestamps: true }); // Correct option for timestamps
+    },
+    deliveryAddresses: [addressSchema] // Array of delivery addresses
+}, { timestamps: true });
 
-const User = mongoose.model('User', userSchema); // Model name is "User"
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
