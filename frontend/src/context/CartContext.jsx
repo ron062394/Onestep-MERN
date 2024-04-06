@@ -92,8 +92,30 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+
+  const removeItemFromCart = async (productId, size) => {
+    try {
+      const response = await fetch(`https://onestep-api.vercel.app/api/cart/remove/${productId}/${size}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error("Failed to remove item from cart");
+      }
+      // Update cart state after successful removal
+      setCart(prevCart => prevCart.filter(item => !(item._id === productId && item.size === size)));
+    } catch (error) {
+      console.error("Error removing item from cart:", error);
+    }
+  };
+
+
+
   return (
-    <CartContext.Provider value={{ cart, loading, updateCart, incrementQuantity, decrementQuantity }}>
+    <CartContext.Provider value={{ cart, loading, updateCart, incrementQuantity, decrementQuantity, removeItemFromCart }}>
       {children}
     </CartContext.Provider>
   );
