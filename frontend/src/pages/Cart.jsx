@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import "./Cart.css";
 
 function Cart() {
-  const { cart, loading, incrementQuantity, decrementQuantity, updateCart } = useCart(); // Use the useCart hook to access cart data and functions
+  const { cart, loading, incrementQuantity, decrementQuantity, removeItemFromCart, updateCart } = useCart(); // Use the useCart hook to access cart data and functions
   const navigate = useNavigate();
   
   // Load cart data from local storage on component mount
@@ -24,6 +24,10 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify(cart));
     console.log(cart)
   }, [cart]); // Run this effect whenever cart data changes
+
+  const handleRemoveItem = (productId, size) => {
+    removeItemFromCart(productId, size);
+  };
 
   return (
     <div className="cart-section">
@@ -86,7 +90,7 @@ function Cart() {
                     </span>
                   </div>
                   <div>
-                    <span className="remove-btn">x</span>
+                    <span className="remove-btn" onClick={() => handleRemoveItem(item.product._id, item.size)}>x</span>
                   </div>
                   <div>
                     <span>
