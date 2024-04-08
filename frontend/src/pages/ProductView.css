@@ -11,12 +11,13 @@
     grid-template-columns: 33% 66%;
     gap: 1%;
     padding: 10px 140px;
+    
   }
   
   .img-container {
     background-color: rgb(255, 255, 255);
     height: 50vh;
-    border: #dfdfdf solid 1px;
+    border: 1px solid rgb(218, 216, 216);
   }
   
   .img-container img {
@@ -51,7 +52,7 @@
   
   .product-info-container {
     background-color: rgb(255, 255, 255);
-    border: #dfdfdf solid 1px;
+    border: 1px solid rgb(218, 216, 216);
     max-height: calc(50vh - 2rem);
     padding: 1rem;
   }
@@ -74,7 +75,7 @@
     margin-top: 1rem;
     padding: 2rem;
     margin: 10px 140px;
-    border: #dfdfdf solid 1px;
+    border: 1px solid rgb(218, 216, 216);
   }
   
   .spec-text-container {
