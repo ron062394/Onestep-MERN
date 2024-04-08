@@ -35,13 +35,15 @@ function Header() {
           {user ? (
             <>
               <li>
-                <span>Hi {user.firstName}</span>
+                <NavLink className="no-text-decoration" to="/profile" activeClassName="active">
+                  <span>Hi {user.firstName}</span>
+                </NavLink>
               </li>
               {/* <span className="vertical-line">|</span> */}
               <li>
                 <NavLink className="no-text-decoration" to="/cart" activeClassName="active">
                     Cart
-                  </NavLink>
+                </NavLink>
               </li>
               <li>
                 <span onClick={handleLogout}>Logout</span>
