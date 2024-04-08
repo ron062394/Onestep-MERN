@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Dashboard from "./pages/admin/Dashboard";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
+import Profile from './pages/Profile';
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,7 @@ function App() {
           <Route path="/checkout/" element={<Checkout />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>
