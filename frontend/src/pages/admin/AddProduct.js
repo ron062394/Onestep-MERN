@@ -63,7 +63,7 @@ function AddProduct() {
         sizes: selectedSizes,
       };
 
-      const response = await fetch("/api/product", {
+      const response = await fetch("https://onestep-api.vercel.app/api/product", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
