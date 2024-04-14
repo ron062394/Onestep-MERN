@@ -1,0 +1,26 @@
+.profile-section {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 10px 140px;
+}
+
+
+.profile-section-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.acc-information > div {
+    border-bottom: 1px solid rgb(218, 216, 216);
+}
+
+.orders > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+
+.address-book {
+    display: flex;
+    
+}

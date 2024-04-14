@@ -1,15 +1,16 @@
 import React from 'react';
+import "./Profile.css"
 
 function Profile() {
 
   return (
     <div className="profile-section">
-      <div>
+      <div className='profile-section-header'>
         <span>My Account</span>
         <span>Continue Shopping</span>
       </div>
-      <div>
-        <div>Account Info</div>
+      <div className='acc-information'>
+        <div>ACCOUNT INFORMATION</div>
         <div>
           <div>First name: <span>John</span></div>
           <div>Last name: <span>Doe</span></div>
@@ -17,7 +18,7 @@ function Profile() {
           <div>Contact Number: <span>+12-23456789</span></div>
         </div>        
       </div>
-      <div className="Orders">
+      <div className="orders">
         <div>
           <span>Order Id</span>
           <span>Date</span>
@@ -36,8 +37,8 @@ function Profile() {
         </div>
         <div>End of result(s)</div>
       </div>
-      <div>
-        <div>ADDRESS BOOK</div>
+      <div>ADDRESS BOOK</div>
+      <div className='address-book'>
         <div>
           <div>
             <span>John Doe</span>
