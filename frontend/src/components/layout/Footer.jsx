@@ -12,7 +12,7 @@ function Footer() {
             <li>CONTACT US</li>
             <li>ABOUT</li>
           </ul>
-          <span className="logo"><span className="yellow-color">O</span>NES<span className="yellow-color">T</span>E<span className="yellow-color">P</span></span>
+          <span className="logo footer-logo"><span className="yellow-color">O</span>NES<span className="yellow-color">T</span>E<span className="yellow-color">P</span></span>
         </div>
         <span className="copy-right">Copyright © 2023 ONE STEP • ron.TheVeloper</span>
       </footer>

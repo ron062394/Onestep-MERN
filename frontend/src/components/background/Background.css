@@ -23,7 +23,7 @@
   overflow: hidden;
   z-index: -2;
   background-image: radial-gradient(
-    rgba(223, 223, 223, 0.1) 1px, 
+    rgba(214, 190, 190, 0.05) 1px, 
     transparent 1px
   );
   background-position: 50% 50%;

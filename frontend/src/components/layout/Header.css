@@ -7,6 +7,7 @@ header {
   align-items: center;
   padding-top: 1.5%;
   height: 8vh;
+  
 }
 
 .link-list-container {
@@ -74,17 +75,26 @@ header {
   header {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    width: 100%;
+    background-color: #204C38;
+    color: rgb(255, 255, 255);
   }
+
+  .header-section {
+    margin: 0;
+  }
+
   .menu-icon {
       display: block;
+      position: absolute;
+      right: 1rem;
   }
 
   .link-list-container {
       display: none;
       flex-direction: column;
       position: fixed;
-      top: 40px; /* Adjust based on your header height */
+      top: 40px;
       right: 10px;
       background-color:#ffffff;
       width: 5rem;
@@ -98,7 +108,8 @@ header {
   }
 
   .link-list-container li {
-      margin: 10px 0; /* Add spacing between links in the dropdown */
+      margin: 10px 0;
+      font-size: 1rem;
   }
   .search-input, .vl {
     display: none;
