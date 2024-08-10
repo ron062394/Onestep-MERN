@@ -6,7 +6,7 @@
     flex-direction: column;
     height: 65vh;
     
-  }
+}
 
 .welcome-back-tagline {
   display: flex;
@@ -31,8 +31,7 @@
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(189, 189, 189, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.125);
-    padding: 2rem;
-
+    padding: 4rem;
 }
 
 
@@ -72,3 +71,17 @@
 }
 
 
+
+
+/* Media Query for Small screens */
+@media screen and (max-width: 480px) {
+  .login-section {
+    margin: 100px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 65vh;
+    width: 100%;
+}
+}

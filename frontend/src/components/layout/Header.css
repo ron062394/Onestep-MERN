@@ -7,7 +7,6 @@ header {
   align-items: center;
   padding-top: 1.5%;
   height: 8vh;
-  
 }
 
 .link-list-container {
@@ -56,4 +55,52 @@ header {
 .logo .active::after {
   content: ""; 
   width: 0;
+}
+
+/* Default styles */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.link-list-container {
+  display: flex;
+  list-style-type: none;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .menu-icon {
+      display: block;
+  }
+
+  .link-list-container {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 40px; /* Adjust based on your header height */
+      right: 10px;
+      background-color:#ffffff;
+      width: 5rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      color: black;
+  }
+
+  .link-list-container.show {
+      display: flex;
+  }
+
+  .link-list-container li {
+      margin: 10px 0; /* Add spacing between links in the dropdown */
+  }
+  .search-input, .vl {
+    display: none;
+  }
 }

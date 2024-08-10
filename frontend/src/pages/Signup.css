@@ -70,3 +70,14 @@
 .login-link {
   font-size: 0.8rem;
 }
+
+/* Media Query for Small screens */
+@media screen and (max-width: 480px) {
+  .signup-section {
+    margin: 100px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
