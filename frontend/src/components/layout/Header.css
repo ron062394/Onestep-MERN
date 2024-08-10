@@ -72,6 +72,11 @@ header {
 
 /* Responsive styles */
 @media (max-width: 480px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+  
   header {
     display: flex;
     justify-content: space-between;

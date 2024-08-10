@@ -74,6 +74,11 @@
 
 /* Media Query for Small screens */
 @media screen and (max-width: 480px) {
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
   .signup-section {
     margin: 0px;
     display: flex;

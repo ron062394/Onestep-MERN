@@ -28,7 +28,11 @@
 
 /* Media Query for Small screens */
 @media screen and (max-width: 480px) {
-    
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
     .footer-logo {
         display: none;
     }
