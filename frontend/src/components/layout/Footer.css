@@ -25,33 +25,3 @@
     font-size: .8rem;
     margin: 0 140px;
 }
-
-/* Media Query for Small screens */
-@media screen and (max-width: 480px) {
-    * {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .footer-logo {
-        display: none;
-    }
-    .footer-section{
-        background-color: #204C38;
-        width: 100%;
-        padding: 1rem 0;
-    } 
-    .copy-right {
-        font-size: .8rem;
-        margin: 0px;
-        padding-left: 1rem;
-    }
-    .footer-container {
-        display: flex;
-        justify-content: center;
-        margin: 0px;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-}

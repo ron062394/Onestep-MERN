@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 import Background from '../components/background/Background';
 import DynamicButton from "../components/dynamic/DynamicButton"; // Import the Button component
@@ -12,17 +12,11 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    try {
-      await login(email, password);
-      // Check if user is not empty and navigate to home if not empty
-      if (localStorage.getItem('user')) {
-        navigate('/');
-      }
-    } catch (error) {
-      console.error('Login failed:', error);
-      setEmail('');
-      setPassword('');
+    e.preventDefault();
+    await login(email, password);
+    // Remove the try-catch block as error handling is likely done in the useLogin hook
+    if (localStorage.getItem('user')) {
+      navigate('/');
     }
   };
 
@@ -59,7 +53,9 @@ function Login() {
             />
             <div>
               <DynamicButton isLoading={isLoading} text="Login" loadingText="Logging In..." />
-              <span className="signup-link">Don't have an account yet? Click here</span>
+              <span className="signup-link">
+                Don't have an account yet? <Link to="/signup">Click here</Link>
+              </span>
             </div>
 
           </form>
