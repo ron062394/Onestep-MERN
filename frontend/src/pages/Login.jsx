@@ -23,14 +23,15 @@ function Login() {
   return (
     <div className="login-section">
       <Background/>
-      <div className="welcome-back-tagline">
-        <h2>Welcome Back to Onestep!</h2>
-        <p>We're thrilled to see you again. Let's find your perfect pair of shoes!</p>
-      </div>
       <div className="login-container">
-        {/* <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" /> */}
-        <div className="login-card">
-          <span className='login-text'>Great to have you back!</span>
+        <h2>Welcome Back to Onestep!</h2>
+        <div className="login-card" style={{ flex: '1' }}>
+          <div className="welcome-back-tagline">
+            <h3 className='login-text'>Great to have you back!</h3>
+            <p>We're thrilled to see you again. Let's find your perfect pair of shoes!</p>
+            <img src="https://freepngimg.com/save/17091-running-shoes-png-clipart/670x363" alt="black and pink shoe" style={{ flex: '1' }} />
+          </div>
+          
           <form onSubmit={handleLogin}> {/* Form element */}
             <label>Email Address</label>            
             <input
@@ -64,8 +65,6 @@ function Login() {
       </div>
 
     </div>
-
-
 
   );
 }
